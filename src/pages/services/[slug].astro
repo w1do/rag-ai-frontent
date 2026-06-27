@@ -1,0 +1,21 @@
+---
+import ServiceLayout from "@/layouts/ServiceLayout.astro";
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const services = await getCollection('services');
+    return services.map(service => ({
+        params: { slug: service.id },
+        props: { service },
+    }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+const allServices = await getCollection('services');
+const sortedServices = allServices.sort((a, b) => a.data.order - b.data.order);
+---
+
+<ServiceLayout service={service} sortedServices={sortedServices}>
+    <Content />
+</ServiceLayout>

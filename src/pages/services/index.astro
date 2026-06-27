@@ -1,0 +1,115 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => a.data.order - b.data.order);
+---
+<Layout>
+
+<!-- breadcrumb section start -->
+<section class="breadcrumb-section pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="assets/images/breadcrumb/breadcrumb-shape-line.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- breadcrumb content start -->
+                <div class="breadcrumb-content">
+                    <!-- breadcrumb title start -->
+                    <div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s">
+                        <h1>Services</h1>
+                    </div>
+                    <!-- breadcrumb title end -->
+                    <!-- nav start -->
+                    <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Services</li>
+                        </ol>
+                    </nav>
+                    <!-- nav end -->
+                </div>
+                <!-- breadcrumb content end -->
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb-shape">
+        <img class="breadcrumb-shape-one" src="assets/images/breadcrumb/breadcrumb-shape-1.png" alt="breadcrumb shape one">
+        <img class="breadcrumb-shape-two" src="assets/images/breadcrumb/breadcrumb-shape-2.png" alt="breadcrumb shape two">
+        <img class="breadcrumb-shado-top" src="assets/images/breadcrumb/breadcrumb-shado-top.png" alt="breadcrumb shape top">
+        <img class="breadcrumb-shado-bottom" src="assets/images/breadcrumb/breadcrumb-shado-bottom.png" alt="breadcrumb shape bottom">
+    </div>
+</section>
+<!-- breadcrumb section end -->
+
+<!-- services section start -->
+<section class="services-section pt-100 md-pt-80 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            {sortedServices.map((service, index) => (
+                <div class={index < 3 || index >= 5 ? "col-lg-4" : "col-lg-6"}>
+                    <!-- services item start -->
+                    <div class="services-item right-after wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`}>
+                        <div class="services-content">
+                            <h2><a href={`/services/${service.id}`}>{service.data.title.split(' ').slice(0, 2).join(' ')} <br> {service.data.title.split(' ').slice(2).join(' ')}</a></h2>
+                            <div class={index < 3 || index >= 5 ? "check-list" : "check-list-two-col"}>
+                                <ul>
+                                    {service.data.features?.map(feature => (
+                                        <li>{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-image">
+                            <figure>
+                                <img src={service.data.image} alt={service.data.title}>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- services item end -->
+                </div>
+            ))}
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- pagination start -->
+                <div class="pagination justify-content-center wow fadeInUp" data-wow-delay=".8s">
+                    <nav aria-label="page navigation">
+                        <ul class="page-list">
+                            <li><a aria-current="page" class="page-numbers current" href="#">1</a></li>
+                            <li><a class="page-numbers" href="#">2</a></li>
+                            <li><a class="next page-numbers" href="#">Next Page</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- pagination end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- services section end -->
+
+<!-- cta section start -->
+<section class="cta-section-1 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- cta content start -->
+                <div class="cta-content left-before right-after" data-img-src="assets/images/cta/bg-patten.png">
+                    <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                        <h2>Join Millon Companies who Already <span>Trust With Us</span></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati accusantium.</p>
+                    </div>
+                    <div class="cta-button wow fadeInUp" data-wow-delay=".3s">
+                        <a href="contact.html" class="theme-button style-1" aria-label="Request a demo">
+                            <span data-text="Request a demo">Request a demo</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- cta content end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cta section end -->
+</Layout>

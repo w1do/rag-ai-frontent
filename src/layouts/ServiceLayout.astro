@@ -1,0 +1,232 @@
+---
+import Layout from "./Layout.astro";
+import { getCollection } from 'astro:content';
+
+interface Props {
+    service: any;
+    sortedServices: any[];
+}
+
+const { service, sortedServices } = Astro.props;
+const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = service.data;
+---
+
+<Layout title={title}>
+    <!-- breadcrumb section start -->
+    <section class="breadcrumb-section pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="/assets/images/breadcrumb/breadcrumb-shape-line.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- breadcrumb content start -->
+                    <div class="breadcrumb-content">
+                        <!-- breadcrumb title start -->
+                        <div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s">
+                            <h1>Services Details</h1>
+                        </div>
+                        <!-- breadcrumb title end -->
+                        <!-- nav start -->
+                        <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/services">Services</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Services Details</li>
+                            </ol>
+                        </nav>
+                        <!-- nav end -->
+                    </div>
+                    <!-- breadcrumb content end -->
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumb-shape">
+            <img class="breadcrumb-shape-one" src="/assets/images/breadcrumb/breadcrumb-shape-1.png" alt="breadcrumb shape one">
+            <img class="breadcrumb-shape-two" src="/assets/images/breadcrumb/breadcrumb-shape-2.png" alt="breadcrumb shape two">
+            <img class="breadcrumb-shado-top" src="/assets/images/breadcrumb/breadcrumb-shado-top.png" alt="breadcrumb shape top">
+            <img class="breadcrumb-shado-bottom" src="/assets/images/breadcrumb/breadcrumb-shado-bottom.png" alt="breadcrumb shape bottom">
+        </div>
+    </section>
+    <!-- breadcrumb section end -->
+
+    <!-- service single section start -->
+    <section class="service-single-section pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="service-single-media wow fadeInUp" data-wow-delay=".3s">
+                        <figure class="image-anime">
+                            <img src={image} alt={title}>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-lg-row-reverse">
+                <div class="col-xl-8 col-md-12 order-lg-2">
+                    <div class="service-single-post wow fadeInUp" data-wow-delay=".3s">
+                        <div class="service-single-contain">
+                            <div class="service-entry-content">
+                                <h2>{title}</h2>
+                                <slot />
+
+                                {features && (
+                                    <>
+                                        <h3 class="pt-20">Included service features</h3>
+                                        <div class="check-list mb-20">
+                                            <ul>
+                                                {features.map((feature: unknown) => (
+                                                    <li>{feature}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </>
+                                )}
+
+                                {whatWeDo && (
+                                    <>
+                                        <h3 class="pt-20">What we do?</h3>
+                                        <p>{whatWeDo}</p>
+                                        {whatWeDoList && (
+                                            <div class="check-list mb-20">
+                                                <ul>
+                                                    {whatWeDoList.map((item: unknown) => (
+                                                        <li>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+
+                                {benefits && (
+                                    <>
+                                        <h3 class="pt-20">Benefits of Our Services</h3>
+                                        <div class="row benifits-wapper">
+                                            {benefits.map((benefit: { icon: string | null | undefined; title: unknown; description: unknown; }) => (
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                    <div class="benifits-item">
+                                                        <div class="benifits-content">
+                                                            <i class={benefit.icon}></i>
+                                                            <h4>{benefit.title}</h4>
+                                                            <p>{benefit.description}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+
+                                {faqs && (
+                                    <>
+                                        <h3 class="pt-20">Frequently Asked Question</h3>
+                                        <div class="accordion" id="accordionExample">
+                                            {faqs.map((faq: { question: unknown; answer: unknown; }, index: number) => (
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id={`heading${index}`}>
+                                                        <button class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded={index === 0 ? "true" : "false"} aria-controls={`collapse${index}`}>
+                                                            {faq.question}
+                                                        </button>
+                                                    </h2>
+                                                    <div id={`collapse${index}`} class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`} data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <div class="inner">
+                                                                <div class="accordion-content">
+                                                                    <p>{faq.answer}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-12">
+                    <div class="widget-sidebar wow fadeInUp" data-wow-delay=".3s">
+                        <!-- widget categories list -->
+                        <div class="widget widget-categories-list">
+                            <div class="widget-title">
+                                <h3>Categories</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="category-list">
+                                    {sortedServices.map(s => (
+                                        <li>
+                                            <a href={`/services/${s.id}`} class={s.id === service.id ? 'active' : ''}>
+                                                <span class="categories-name">{s.data.title} </span>
+                                                <span class="categories-count">({s.data.order})</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- widget company profile -->
+                        <div class="widget widget-company-profile">
+                            <div class="widget-title">
+                                <h3>Company Profile</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="company-profile-list">
+                                    <li>
+                                        <a href="#">
+                                                    <span class="company-profile-icon d-flex align-items-center justify-content-center flex-shrink-0">
+                                                        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                                    </span>
+                                            <span class="download-content">
+                                                        Download PDF File
+                                                    </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                                    <span class="company-profile-icon d-flex align-items-center justify-content-center flex-shrink-0">
+                                                        <i class="fa-solid fa-file-word" aria-hidden="true"></i>
+                                                    </span>
+                                            <span class="download-content">
+                                                        Download Word File
+                                                    </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- widget cta -->
+                        <div class="widget widget-cta">
+                            <div class="widget-title">
+                                <h3>Needs Any Help?</h3>
+                            </div>
+                            <div class="widget-content">
+                                <p>Our Client care managers are on call 24/7 to answer your questions representative or submit a business inquiry online.</p>
+                                <div class="service-cta-item">
+                                    <div class="service-cta-list d-flex gap-3">
+                                        <div class="service-cta-icon d-flex align-items-center justify-content-center flex-shrink-0">
+                                            <i class="fa-solid fa-phone-volume"></i>
+                                        </div>
+                                        <div class="service-cta-content flex-grow-1">
+                                            <p>Phone Number</p>
+                                            <a href="tel:123446788">+1 234 467 88</a>
+                                        </div>
+                                    </div>
+                                    <div class="service-cta-list d-flex gap-3">
+                                        <div class="service-cta-icon d-flex align-items-center justify-content-center flex-shrink-0">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div class="service-cta-content flex-grow-1">
+                                            <p>Email Address</p>
+                                            <a href="mailto:info@domain.com">info@domain.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service single section end -->
+</Layout>

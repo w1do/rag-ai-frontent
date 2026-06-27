@@ -1,5 +1,6 @@
 # План проекта
 - Постоянно следуй описанию проекта, [PLAN](./PLAN.md), раскрывай каждый блок на эту тему , охватывай LSI ключами по SEO, ориентируясь на ключевые слова и хвосты на семантическое ядро в папке `seo/`, используй навык работы с seo `.agents/skills/frontent/astro/seo.md`
+- Не в коем случае не изменяй PLAN.md, никогда, это изначальная информация о проекте
 
 ## Development
 
@@ -11,7 +12,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
-- использовать главное правило сборки проекта `.agents/skills/frontent/astro/SKILL.md`
+- использовать главное правило сборки проекта в глобальном `.agents/skills/frontent/astro/SKILL.md`
+
+# MCP
+При необходимости обращайся к Astro docs чтобы понять как реализовать функцию
 
 ## Write documentations
 - mandatory project documentation at all stages use `skills/frontent/astro/documentation`
