@@ -8,10 +8,23 @@ interface Props {
 }
 
 const { service, sortedServices } = Astro.props;
-const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = service.data;
+const { title, description, image, features, whatWeDo, whatWeDoList, benefits, faqs } = service.data;
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "description": description || title,
+    "provider": {
+        "@type": "Organization",
+        "name": "BotSync",
+        "url": "https://botsync.ru"
+    },
+    "image": new URL(image, Astro.site || "https://botsync.ru").toString()
+};
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} ogImage={image} schema={schema} type="article">
     <!-- breadcrumb section start -->
     <section class="breadcrumb-section pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="/assets/images/breadcrumb/breadcrumb-shape-line.png">
         <div class="container">
@@ -167,27 +180,17 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
                         <!-- widget company profile -->
                         <div class="widget widget-company-profile">
                             <div class="widget-title">
-                                <h3>Company Profile</h3>
+                                <h3>BotSync Profile</h3>
                             </div>
                             <div class="widget-content">
                                 <ul class="company-profile-list">
                                     <li>
-                                        <a href="#">
+                                        <a href="https://t.me/W1DO_DIGITAL">
                                                     <span class="company-profile-icon d-flex align-items-center justify-content-center flex-shrink-0">
-                                                        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
                                                     </span>
                                             <span class="download-content">
-                                                        Download PDF File
-                                                    </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                                    <span class="company-profile-icon d-flex align-items-center justify-content-center flex-shrink-0">
-                                                        <i class="fa-solid fa-file-word" aria-hidden="true"></i>
-                                                    </span>
-                                            <span class="download-content">
-                                                        Download Word File
+                                                        Написать в Telegram
                                                     </span>
                                         </a>
                                     </li>
@@ -197,18 +200,18 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
                         <!-- widget cta -->
                         <div class="widget widget-cta">
                             <div class="widget-title">
-                                <h3>Needs Any Help?</h3>
+                                <h3>Нужна помощь?</h3>
                             </div>
                             <div class="widget-content">
-                                <p>Our Client care managers are on call 24/7 to answer your questions representative or submit a business inquiry online.</p>
+                                <p>Наши специалисты готовы ответить на ваши вопросы и помочь с внедрением ИИ-решений.</p>
                                 <div class="service-cta-item">
                                     <div class="service-cta-list d-flex gap-3">
                                         <div class="service-cta-icon d-flex align-items-center justify-content-center flex-shrink-0">
-                                            <i class="fa-solid fa-phone-volume"></i>
+                                            <i class="fa-brands fa-telegram"></i>
                                         </div>
                                         <div class="service-cta-content flex-grow-1">
-                                            <p>Phone Number</p>
-                                            <a href="tel:123446788">+1 234 467 88</a>
+                                            <p>Telegram</p>
+                                            <a href="https://t.me/W1DO_DIGITAL">@W1DO_DIGITAL</a>
                                         </div>
                                     </div>
                                     <div class="service-cta-list d-flex gap-3">
@@ -216,8 +219,8 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
                                             <i class="fa-solid fa-envelope"></i>
                                         </div>
                                         <div class="service-cta-content flex-grow-1">
-                                            <p>Email Address</p>
-                                            <a href="mailto:info@domain.com">info@domain.com</a>
+                                            <p>Email</p>
+                                            <a href="mailto:uniqdeveloper@yandex.ru">uniqdeveloper@yandex.ru</a>
                                         </div>
                                     </div>
                                 </div>

@@ -17,7 +17,20 @@ import Blog from "@/components/Shared/Blog.astro";
 
 const seoData = {
     title: "BotSync — Конструктор ИИ-ботов и RAG-платформа для бизнеса",
-    description: "Создайте умного ИИ-агента за 5 минут. Обучение на ваших данных (PDF, сайты, Wiki) с помощью технологии RAG. Автоматизация поддержки и продаж."
+    description: "Создайте умного ИИ-агента за 5 минут. Обучение на ваших данных (PDF, сайты, Wiki) с помощью технологии RAG. Автоматизация поддержки и продаж.",
+    ogImage: "/assets/images/og-main.png"
+};
+
+const mainSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BotSync",
+    "url": "https://botsync.ru",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://botsync.ru/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
 };
 
 const miconItems = [
@@ -54,7 +67,7 @@ const marqueeItems = [
 ];
 ---
 
-<Layout title={seoData.title} description={seoData.description}>
+<Layout title={seoData.title} description={seoData.description} ogImage={seoData.ogImage} schema={mainSchema}>
     <Hero 
         subTitle="Интеллектуальная автоматизация вашего бизнеса"
         title="Создайте своего"

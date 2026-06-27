@@ -15,3 +15,5 @@
 ## Информация
 - **название бренда**: BotSync
 - **адрес проекта**: [BotSync](https://botsync.ru)
+- **почта**: uniqdeveloper@yandex.ru
+- **Telegram**: W1DO_DIGITAL
