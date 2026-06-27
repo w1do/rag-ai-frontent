@@ -1,5 +1,22 @@
 ---
+interface GalleryItem {
+    image: string;
+    alt: string;
+}
 
+interface Props {
+    images?: GalleryItem[];
+}
+
+const {
+    images = [
+        { image: "assets/images/image/image-1.jpg", alt: "image one" },
+        { image: "assets/images/image/image-2.jpg", alt: "image two" },
+        { image: "assets/images/image/image-3.jpg", alt: "image three" },
+        { image: "assets/images/image/image-4.jpg", alt: "image four" },
+        { image: "assets/images/image/image-5.jpg", alt: "image five" }
+    ]
+} = Astro.props;
 ---
 <!-- image section start -->
 <div class="image-section">
@@ -14,84 +31,18 @@
             <div class="col-lg-12">
                 <!-- image wapper start -->
                 <div class="image-wapper">
-                    <!-- image box start -->
-                    <div class="image-box">
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-1.jpg" alt="image one">
-                            </figure>
+                    {/* Повторяем дважды для эффекта бесконечной прокрутки, если это предусмотрено стилями */}
+                    {[1, 2].map(() => (
+                        <div class="image-box">
+                            {images.map((item) => (
+                                <div class="image-item">
+                                    <figure>
+                                        <img src={item.image} alt={item.alt}>
+                                    </figure>
+                                </div>
+                            ))}
                         </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-2.jpg" alt="image two">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-3.jpg" alt="image three">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-4.jpg" alt="image four">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-5.jpg" alt="image five">
-                            </figure>
-                        </div>
-                        <!-- image item start -->
-                    </div>
-                    <!-- image box end -->
-                    <!-- image box start -->
-                    <div class="image-box">
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-1.jpg" alt="image one">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-2.jpg" alt="image two">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-3.jpg" alt="image three">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-4.jpg" alt="image four">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                        <!-- image item start -->
-                        <div class="image-item">
-                            <figure>
-                                <img src="assets/images/image/image-5.jpg" alt="image five">
-                            </figure>
-                        </div>
-                        <!-- image item end -->
-                    </div>
-                    <!-- image box end -->
+                    ))}
                 </div>
                 <!-- image wapper end -->
             </div>

@@ -21,15 +21,15 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
                     <div class="breadcrumb-content">
                         <!-- breadcrumb title start -->
                         <div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s">
-                            <h1>Services Details</h1>
+                            <h1>{title}</h1>
                         </div>
                         <!-- breadcrumb title end -->
                         <!-- nav start -->
                         <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item"><a href="/services">Services</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Services Details</li>
+                                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                                <li class="breadcrumb-item"><a href="/possibilities">Возможности</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Детали</li>
                             </ol>
                         </nav>
                         <!-- nav end -->
@@ -69,7 +69,7 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
 
                                 {features && (
                                     <>
-                                        <h3 class="pt-20">Included service features</h3>
+                                        <h3 class="pt-20">Включенные функции</h3>
                                         <div class="check-list mb-20">
                                             <ul>
                                                 {features.map((feature: unknown) => (
@@ -82,7 +82,7 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
 
                                 {whatWeDo && (
                                     <>
-                                        <h3 class="pt-20">What we do?</h3>
+                                        <h3 class="pt-20">Что мы делаем?</h3>
                                         <p>{whatWeDo}</p>
                                         {whatWeDoList && (
                                             <div class="check-list mb-20">
@@ -98,7 +98,7 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
 
                                 {benefits && (
                                     <>
-                                        <h3 class="pt-20">Benefits of Our Services</h3>
+                                        <h3 class="pt-20">Преимущества наших решений</h3>
                                         <div class="row benifits-wapper">
                                             {benefits.map((benefit: { icon: string | null | undefined; title: unknown; description: unknown; }) => (
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -117,7 +117,7 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
 
                                 {faqs && (
                                     <>
-                                        <h3 class="pt-20">Frequently Asked Question</h3>
+                                        <h3 class="pt-20">Часто задаваемые вопросы</h3>
                                         <div class="accordion" id="accordionExample">
                                             {faqs.map((faq: { question: unknown; answer: unknown; }, index: number) => (
                                                 <div class="accordion-item">
@@ -149,13 +149,13 @@ const { title, image, features, whatWeDo, whatWeDoList, benefits, faqs } = servi
                         <!-- widget categories list -->
                         <div class="widget widget-categories-list">
                             <div class="widget-title">
-                                <h3>Categories</h3>
+                                <h3>Возможности</h3>
                             </div>
                             <div class="widget-content">
                                 <ul class="category-list">
                                     {sortedServices.map(s => (
                                         <li>
-                                            <a href={`/services/${s.id}`} class={s.id === service.id ? 'active' : ''}>
+                                            <a href={`/possibilities/${s.id}`} class={s.id === service.id ? 'active' : ''}>
                                                 <span class="categories-name">{s.data.title} </span>
                                                 <span class="categories-count">({s.data.order})</span>
                                             </a>

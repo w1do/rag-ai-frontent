@@ -12,7 +12,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
-- использовать главное правило сборки проекта `.agents/skills/frontent/astro/SKILL.md`
+- использовать главное правило сборки проекта в глобальном `.agents/skills/frontent/astro/SKILL.md`
+
+# MCP
+При необходимости обращайся к Astro docs чтобы понять как реализовать функцию
 
 ## Write documentations
 - mandatory project documentation at all stages use `skills/frontent/astro/documentation`

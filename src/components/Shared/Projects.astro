@@ -1,5 +1,70 @@
 ---
+interface ProjectItem {
+    image: string;
+    title: string;
+    desc: string;
+    features: string[];
+    link?: string;
+}
 
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    projects?: ProjectItem[];
+    footerText?: string;
+    footerLinkText?: string;
+    footerLink?: string;
+}
+
+const {
+    subTitle = "Наши кейсы",
+    titlePre = "Где можно использовать ",
+    titleAccent = "RAG-системы",
+    titlePost = "?",
+    projects = [
+        {
+            image: "assets/images/project/project-3-1.jpg",
+            title: "Техническая поддержка и Helpdesk",
+            desc: "Автоматизируйте ответы на часто задаваемые вопросы, используя вашу базу знаний. ИИ-агент мгновенно найдет нужное решение в инструкциях и поможет клиенту.",
+            features: [
+                "Снижение нагрузки на операторов до 70%",
+                "Мгновенные ответы 24/7 на любом языке",
+                "Точное следование техническим регламентам",
+                "Автоматическая классификация обращений"
+            ],
+            link: "#"
+        },
+        {
+            image: "assets/images/project/project-3-2.jpg",
+            title: "Отдел продаж и Лидогенерация",
+            desc: "ИИ-агент квалифицирует лидов, отвечает на вопросы о продукте и помогает выбрать подходящий тариф, основываясь на данных о ваших услугах.",
+            features: [
+                "Увеличение конверсии за счет скорости ответа",
+                "Автоматический сбор контактных данных",
+                "Персонализированные рекомендации товаров",
+                "Интеграция с вашей CRM-системой"
+            ],
+            link: "#"
+        },
+        {
+            image: "assets/images/project/project-3-3.jpg",
+            title: "Корпоративное обучение и HR",
+            desc: "Создайте внутреннего ассистента для сотрудников. ИИ поможет быстро найти информацию по внутренним регламентам, FAQ и обучающим материалам.",
+            features: [
+                "Быстрый онбординг новых сотрудников",
+                "Доступ к базе знаний компании в один клик",
+                "Снижение нагрузки на HR-департамент",
+                "Обучение на внутренних регламентах и Wiki"
+            ],
+            link: "#"
+        }
+    ],
+    footerText = "Мы помогаем бизнесу проектировать, создавать и внедрять интеллектуальные решения, которые приносят реальные результаты.",
+    footerLinkText = "Узнать больше",
+    footerLink = "#contact"
+} = Astro.props;
 ---
 <!-- project section start -->
 <section class="project-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
@@ -8,8 +73,8 @@
             <div class="col-lg-12">
                 <!-- section title start -->
                 <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                    <span class="sub-title">Наши кейсы</span>
-                    <h2>Где можно использовать <span>RAG-системы</span>?</h2>
+                    <span class="sub-title">{subTitle}</span>
+                    <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
                 </div>
                 <!-- section title end -->
             </div>
@@ -18,93 +83,34 @@
             <div class="col-lg-12">
                 <!-- project wapper start -->
                 <div class="project-wapper grid-1">
-                    <!-- project item start -->
-                    <div class="project-item sticky">
-                        <div class="project-image order-lg-2">
-                            <a href="project-details.html">
-                                <figure class="image-anime">
-                                    <img src="assets/images/project/project-3-1.jpg" alt="project image one">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <h2><a href="#">Техническая поддержка и Helpdesk</a></h2>
-                            <p class="desc">Автоматизируйте ответы на часто задаваемые вопросы, используя вашу базу знаний. ИИ-агент мгновенно найдет нужное решение в инструкциях и поможет клиенту.</p>
-                            <div class="check-list mb-30">
-                                <ul>
-                                    <li>Снижение нагрузки на операторов до 70%</li>
-                                    <li>Мгновенные ответы 24/7 на любом языке</li>
-                                    <li>Точное следование техническим регламентам</li>
-                                    <li>Автоматическая классификация обращений</li>
-                                </ul>
-                            </div>
-                            <div class="project-button">
-                                <a href="#contact" class="theme-button style-1" aria-label="Подробнее">
-                                    <span data-text="Подробнее">Подробнее</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
+                    {projects.map((project) => (
+                        <div class="project-item sticky">
+                            <div class="project-image order-lg-2">
+                                <a href={project.link}>
+                                    <figure class="image-anime">
+                                        <img src={project.image} alt={project.title}>
+                                    </figure>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <!-- project item end -->
-                    <!-- project item start -->
-                    <div class="project-item sticky">
-                        <div class="project-image order-lg-2">
-                            <a href="project-details.html">
-                                <figure class="image-anime">
-                                    <img src="assets/images/project/project-3-2.jpg" alt="project image two">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <h2><a href="#">Отдел продаж и Лидогенерация</a></h2>
-                            <p class="desc">ИИ-агент квалифицирует лидов, отвечает на вопросы о продукте и помогает выбрать подходящий тариф, основываясь на данных о ваших услугах.</p>
-                            <div class="check-list mb-30">
-                                <ul>
-                                    <li>Увеличение конверсии за счет скорости ответа</li>
-                                    <li>Автоматический сбор контактных данных</li>
-                                    <li>Персонализированные рекомендации товаров</li>
-                                    <li>Интеграция с вашей CRM-системой</li>
-                                </ul>
-                            </div>
-                            <div class="project-button">
-                                <a href="#contact" class="theme-button style-1" aria-label="Подробнее">
-                                    <span data-text="Подробнее">Подробнее</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                            <div class="project-content">
+                                <h2><a href={project.link}>{project.title}</a></h2>
+                                <p class="desc">{project.desc}</p>
+                                <div class="check-list mb-30">
+                                    <ul>
+                                        {project.features.map((feature) => (
+                                            <li>{feature}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div class="project-button">
+                                    <a href={project.link} class="theme-button style-1" aria-label="Подробнее">
+                                        <span data-text="Подробнее">Подробнее</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- project item end -->
-                    <!-- project item start -->
-                    <div class="project-item sticky">
-                        <div class="project-image order-lg-2">
-                            <a href="project-details.html">
-                                <figure class="image-anime">
-                                    <img src="assets/images/project/project-3-3.jpg" alt="project image three">
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <h2><a href="#">Корпоративное обучение и HR</a></h2>
-                            <p class="desc">Создайте внутреннего ассистента для сотрудников. ИИ поможет быстро найти информацию по внутренним регламентам, FAQ и обучающим материалам.</p>
-                            <div class="check-list mb-30">
-                                <ul>
-                                    <li>Быстрый онбординг новых сотрудников</li>
-                                    <li>Доступ к базе знаний компании в один клик</li>
-                                    <li>Снижение нагрузки на HR-департамент</li>
-                                    <li>Обучение на внутренних регламентах и Wiki</li>
-                                </ul>
-                            </div>
-                            <div class="project-button">
-                                <a href="#contact" class="theme-button style-1" aria-label="Подробнее">
-                                    <span data-text="Подробнее">Подробнее</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- project item end -->
+                    ))}
                 </div>
                 <!-- project wapper end -->
             </div>
@@ -113,7 +119,7 @@
             <div class="col-lg-12">
                 <!-- project start -->
                 <div class="project-footer">
-                    <p>Мы помогаем бизнесу проектировать, создавать и внедрять интеллектуальные решения, которые приносят реальные результаты. <a href="#contact">Узнать больше</a></p>
+                    <p>{footerText} <a href={footerLink}>{footerLinkText}</a></p>
                 </div>
                 <!-- more event content end -->
             </div>

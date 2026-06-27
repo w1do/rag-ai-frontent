@@ -1,5 +1,60 @@
 ---
+interface TestimonialItem {
+    quote: string;
+    author: string;
+    position: string;
+    avatar: string;
+    rating: number;
+}
 
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    desc?: string;
+    avatars?: string[];
+    reviewText?: string;
+    testimonials?: TestimonialItem[];
+}
+
+const {
+    subTitle = "Реальные внедрения ИИ",
+    titlePre = "Что говорят наши ",
+    titleAccent = "клиенты",
+    titlePost = "",
+    desc = "Мы гордимся тем, что помогаем компаниям трансформировать их бизнес-процессы. Посмотрите, как BotSync решает реальные задачи наших пользователей.",
+    avatars = [
+        "assets/images/avatar/avatar-1.jpg",
+        "assets/images/avatar/avatar-2.jpg",
+        "assets/images/avatar/avatar-3.jpg",
+        "assets/images/avatar/avatar-4.jpg"
+    ],
+    reviewText = "Более 40+ компаний уже внедрили BotSync",
+    testimonials = [
+        {
+            quote: "«Внедрение BotSync в нашу техподдержку позволило сократить время ответа клиентам в 5 раз. ИИ отлично справляется с FAQ и техническими вопросами, используя нашу базу знаний.»",
+            author: "Александр Иванов",
+            position: "Технический директор",
+            avatar: "assets/images/avatar/avatar-1.jpg",
+            rating: 5
+        },
+        {
+            quote: "«Мы обучили ИИ на наших каталогах и регламентах продаж. Теперь бот квалифицирует лидов и отвечает на вопросы о товарах даже ночью. Это значительно повысило нашу конверсию.»",
+            author: "Елена Смирнова",
+            position: "Руководитель отдела продаж",
+            avatar: "assets/images/avatar/avatar-2.jpg",
+            rating: 5
+        },
+        {
+            quote: "«BotSync помог нам создать базу знаний для внутренних нужд HR. Теперь сотрудники получают ответы на вопросы по страховкам и отпускам мгновенно, не отвлекая специалистов.»",
+            author: "Дмитрий Волков",
+            position: "HR-директор",
+            avatar: "assets/images/avatar/avatar-3.jpg",
+            rating: 5
+        }
+    ]
+} = Astro.props;
 ---
 <!-- testimonials section start -->
 <section class="testimonials-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
@@ -13,44 +68,28 @@
                 <div class="testimonials-left wow fadeInUp" data-wow-delay=".2s">
                     <!-- section title start -->
                     <div class="section-title">
-                        <span class="sub-title">Реальные внедрения ИИ</span>
-                        <h2>Что говорят наши <span>клиенты</span></h2>
-                        <p class="text-white">Мы гордимся тем, что помогаем компаниям трансформировать их
-                            бизнес-процессы. Посмотрите, как BotSync решает реальные задачи наших пользователей.</p>
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                        <p class="text-white">{desc}</p>
                     </div>
                     <!-- section title end -->
 
                     <!-- testimonials avatar-wapper start -->
                     <div class="testimonials-avatar-wapper">
                         <ul class="testimonials-avatar-list mb-0 d-flex gap-0">
-                            <li>
-                                <figure>
-                                    <img src="assets/images/avatar/avatar-1.jpg" alt="about avtara one">
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="assets/images/avatar/avatar-2.jpg" alt="about avtara two">
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="assets/images/avatar/avatar-3.jpg"
-                                         alt="about avtara three">
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="assets/images/avatar/avatar-4.jpg"
-                                         alt="about avtara four">
-                                </figure>
-                            </li>
+                            {avatars.map((avatar) => (
+                                <li>
+                                    <figure>
+                                        <img src={avatar} alt="avatar">
+                                    </figure>
+                                </li>
+                            ))}
                             <li>
                                 <span>40+</span>
                             </li>
                         </ul>
                         <div class="review-content">
-                            <p>Более 40+ компаний уже внедрили BotSync</p>
+                            <p>{reviewText}</p>
                         </div>
                     </div>
                     <!-- testimonials avatar-wapper end -->
@@ -63,120 +102,40 @@
                     <div class="swiper testimonials-slider-one">
                         <!-- swiper wrapper start -->
                         <div class="swiper-wrapper">
-                            <!-- swiper slide start -->
-                            <div class="swiper-slide">
-                                <!-- testimonials item start -->
-                                <div class="testimonials-item right-after">
-                                    <div class="testimonials-meta">
-                                        <div class="testimonials-quote">
-                                            <i class="fa-solid fa-quote-left"></i>
-                                        </div>
-                                        <div class="testimonials-rating">
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials-content">
-                                        <p>«Внедрение BotSync в нашу техподдержку позволило сократить время ответа
-                                            клиентам в 5 раз. ИИ отлично справляется с FAQ и техническими вопросами,
-                                            используя нашу базу знаний.»</p>
-                                    </div>
-                                    <div class="testimonials-author-box">
-                                        <div class="testimonials-author">
-                                            <div class="testimonials-author-image">
-                                                <figure>
-                                                    <img src="assets/images/avatar/avatar-1.jpg" alt="avatar">
-                                                </figure>
+                            {testimonials.map((item) => (
+                                <div class="swiper-slide">
+                                    <!-- testimonials item start -->
+                                    <div class="testimonials-item right-after">
+                                        <div class="testimonials-meta">
+                                            <div class="testimonials-quote">
+                                                <i class="fa-solid fa-quote-left"></i>
                                             </div>
-                                            <div class="testimonials-author-content">
-                                                <h2>Александр Иванов</h2>
-                                                <p>Технический директор</p>
+                                            <div class="testimonials-rating">
+                                                {[...Array(item.rating)].map(() => (
+                                                    <i class="fa-solid fa-star active"></i>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-content">
+                                            <p>{item.quote}</p>
+                                        </div>
+                                        <div class="testimonials-author-box">
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src={item.avatar} alt={item.author}>
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h2>{item.author}</h2>
+                                                    <p>{item.position}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- testimonials item end -->
                                 </div>
-                                <!-- testimonials item end -->
-                            </div>
-                            <!-- swiper slide end -->
-                            <!-- swiper slide start -->
-                            <div class="swiper-slide">
-                                <!-- testimonials item start -->
-                                <div class="testimonials-item right-after">
-                                    <div class="testimonials-meta">
-                                        <div class="testimonials-quote">
-                                            <i class="fa-solid fa-quote-left"></i>
-                                        </div>
-                                        <div class="testimonials-rating">
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials-content">
-                                        <p>«Мы обучили ИИ на наших каталогах и регламентах продаж. Теперь бот
-                                            квалифицирует лидов и отвечает на вопросы о товарах даже ночью. Это
-                                            значительно повысило нашу конверсию.»</p>
-                                    </div>
-                                    <div class="testimonials-author-box">
-                                        <div class="testimonials-author">
-                                            <div class="testimonials-author-image">
-                                                <figure>
-                                                    <img src="assets/images/avatar/avatar-2.jpg" alt="avatar">
-                                                </figure>
-                                            </div>
-                                            <div class="testimonials-author-content">
-                                                <h2>Елена Смирнова</h2>
-                                                <p>Руководитель отдела продаж</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- testimonials item end -->
-                            </div>
-                            <!-- swiper slide end -->
-                            <!-- swiper slide start -->
-                            <div class="swiper-slide">
-                                <!-- testimonials item start -->
-                                <div class="testimonials-item right-after">
-                                    <div class="testimonials-meta">
-                                        <div class="testimonials-quote">
-                                            <i class="fa-solid fa-quote-left"></i>
-                                        </div>
-                                        <div class="testimonials-rating">
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                            <i class="fa-solid fa-star active"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonials-content">
-                                        <p>«BotSync помог нам создать базу знаний для внутренних нужд HR. Теперь
-                                            сотрудники получают ответы на вопросы по страховкам и отпускам
-                                            мгновенно, не отвлекая специалистов.»</p>
-                                    </div>
-                                    <div class="testimonials-author-box">
-                                        <div class="testimonials-author">
-                                            <div class="testimonials-author-image">
-                                                <figure>
-                                                    <img src="assets/images/avatar/avatar-3.jpg" alt="avatar">
-                                                </figure>
-                                            </div>
-                                            <div class="testimonials-author-content">
-                                                <h2>Дмитрий Волков</h2>
-                                                <p>HR-директор</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- testimonials item end -->
-                            </div>
-                            <!-- swiper slide end -->
+                            ))}
                         </div>
                         <!-- swiper wrapper end -->
                         <!-- swiper actions start -->

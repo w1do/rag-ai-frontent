@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 
+const possibilities = await getCollection('possibilities');
+const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <!-- header start -->
@@ -37,19 +40,38 @@
                                             <a class="nav-link" href="/">Главная</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#about">О нас</a>
+                                            <a class="nav-link" href="#">База знаний<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="/chatbot-ai">ИИ Чат-бот</a></li>
+                                                <li><a href="/automated-answers-rag">RAG Автоответы</a></li>
+                                                <li><a href="/chatbot-integration">Внедрение на сайт</a></li>
+                                                <li><a href="/knowledge-base-rag">База знаний RAG</a></li>
+                                                <li><a href="/rag-systems">RAG Системы</a></li>
+                                                <li><a href="/avito-ai-agent">ИИ Агент для Авито</a></li>
+                                                <li><a href="/car-service-ai">ИИ для Автосервиса</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item menu-thumb">
+                                            <a class="nav-link" href="/possibilities">Возможности<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="has-homemenu">
+                                                {sortedPossibilities.map((possibility) => (
+                                                    <li>
+                                                        <a href={`/possibilities/${possibility.id}`}>
+                                                            <img src={possibility.data.image} alt={possibility.data.title}>
+                                                            {possibility.data.title}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#services">Возможности</a>
+                                            <a class="nav-link" href="/#pricing">Тарифы</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#pricing">Тарифы</a>
+                                            <a class="nav-link" href="/#faq">FAQ</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#faq">FAQ</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#contact">Контакты</a>
+                                            <a class="nav-link" href="/#contact">Контакты</a>
                                         </li>
                                     </ul>
                                 </nav>

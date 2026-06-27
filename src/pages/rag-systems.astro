@@ -1,0 +1,117 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Shared/Hero.astro";
+import Gallery from "@/components/Shared/Gallery.astro";
+import Micon from "@/components/Shared/Micon.astro";
+import ImageGenerator from "@/components/Shared/ImageGenerator.astro";
+import Why from "@/components/Shared/Why.astro";
+import Projects from "@/components/Shared/Projects.astro";
+import MarqueeTicker from "@/components/Shared/MarqueeTicker.astro";
+import HowIt from "@/components/Shared/HowIt.astro";
+import Video from "@/components/Shared/Video.astro";
+import Testimonials from "@/components/Shared/Testimonials.astro";
+import Pricing from "@/components/Shared/Pricing.astro";
+import Team from "@/components/Shared/Team.astro";
+import Faq from "@/components/Shared/Faq.astro";
+import Blog from "@/components/Shared/Blog.astro";
+
+const seoData = {
+    title: "Внедрение RAG-систем для бизнеса | База знаний на базе ИИ BotSync",
+    description: "Узнайте, что такое RAG (Retrieval-Augmented Generation) и как внедрить RAG-модель в ваш бизнес. Создайте ИИ-агента на базе ваших знаний: PDF, сайты, Wiki."
+};
+
+const faqItems = [
+    {
+        question: "Что такое RAG система и как она работает?",
+        answer: "RAG (Retrieval-Augmented Generation) — это технология, которая позволяет LLM моделям обращаться к внешним базам знаний для получения актуальной информации."
+    },
+    {
+        question: "В чем преимущество RAG модели перед обычным обучением?",
+        answer: "RAG модель не требует дорогостоящего дообучения. Она позволяет обновлять знания мгновенно, просто добавляя документы в базу знаний."
+    },
+    {
+        question: "Как создать ИИ-агента на базе моих знаний?",
+        answer: "С BotSync вы можете создать ИИ-агента за 5 минут: загрузите документы, настройте Retrieval и подключите виджет на сайт."
+    }
+];
+
+const marqueeItems = [
+    { text: "RAG Технология" },
+    { text: "LLM + RAG" },
+    { text: "База знаний ИИ" },
+    { text: "Retrieval Augmented Generation" },
+    { text: "ИИ-Агенты" },
+    { text: "AI Бот" }
+];
+---
+
+<Layout title={seoData.title} description={seoData.description}>
+    <Hero 
+        subTitle="Разработка и внедрение RAG-систем"
+        title="Ваша умная"
+        titleAccent="RAG-база знаний"
+        titleMinutes="за 5 минут"
+        desc="Интегрируйте технологию Retrieval-Augmented Generation в свои бизнес-процессы. Обучайте LLM на ваших данных мгновенно и без галлюцинаций."
+    />
+    <Gallery />
+    <Micon 
+        items={[
+            { title: "LLM + RAG", desc: "Используйте мощь современных языковых моделей вместе с вашими приватными данными." },
+            { title: "Точность ИИ", desc: "Забудьте о галлюцинациях. ИИ отвечает только на основе предоставленных вами документов." },
+            { title: "Быстрый старт", desc: "Разработка RAG-системы занимает считанные минуты благодаря нашей no-code платформе." }
+        ]}
+    />
+    <ImageGenerator 
+        titlePre="Что дает "
+        titleAccent="RAG-технология"
+        titlePost=" вашему бизнесу?"
+        items={[
+            {
+                icon: "assets/images/image-generator/icon-1.png",
+                title: "Актуальность данных",
+                desc: "В отличие от статичных моделей, RAG система всегда использует самую свежую информацию из вашей Wiki или сайта."
+            },
+            {
+                icon: "assets/images/image-generator/icon-2.png",
+                title: "Снижение затрат",
+                desc: "Внедрение RAG значительно дешевле и быстрее, чем fine-tuning (дообучение) моделей под конкретные задачи."
+            },
+            {
+                icon: "assets/images/image-generator/icon-3.png",
+                title: "Контроль доступа",
+                desc: "Вы сами решаете, какие данные доступны ИИ-агенту. Безопасность корпоративной информации — наш приоритет."
+            }
+        ]}
+    />
+    <Why 
+        subTitle="Почему RAG?"
+        titlePre="Преимущества "
+        titleAccent="RAG-моделей"
+        titlePost=" для компаний"
+    />
+    <Projects 
+        titlePre="Кейсы использования "
+        titleAccent="Retrieval Augmented Generation"
+        titlePost=""
+    />
+    <MarqueeTicker items={marqueeItems} />
+    <HowIt 
+        titlePre="Как запустить "
+        titleAccent="RAG-агента"
+        titlePost=""
+    />
+    <Video />
+    <Testimonials />
+    <Pricing />
+    <Team 
+        titlePre="Эксперты по "
+        titleAccent="LLM и RAG"
+    />
+    <Faq items={faqItems} />
+    <Blog 
+        subTitle="Все о технологии RAG"
+        titlePre="Статьи о "
+        titleAccent="Retrieval-Augmented Generation"
+        titlePost=""
+    />
+</Layout>

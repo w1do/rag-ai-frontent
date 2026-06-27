@@ -1,0 +1,104 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Shared/Hero.astro";
+import Gallery from "@/components/Shared/Gallery.astro";
+import Micon from "@/components/Shared/Micon.astro";
+import ImageGenerator from "@/components/Shared/ImageGenerator.astro";
+import Why from "@/components/Shared/Why.astro";
+import Projects from "@/components/Shared/Projects.astro";
+import MarqueeTicker from "@/components/Shared/MarqueeTicker.astro";
+import HowIt from "@/components/Shared/HowIt.astro";
+import Video from "@/components/Shared/Video.astro";
+import Testimonials from "@/components/Shared/Testimonials.astro";
+import Pricing from "@/components/Shared/Pricing.astro";
+import Team from "@/components/Shared/Team.astro";
+import Faq from "@/components/Shared/Faq.astro";
+import Blog from "@/components/Shared/Blog.astro";
+
+const seoData = {
+    title: "ИИ-Агент для Авито — Автоответы и Ассистент Маркетинга | BotSync",
+    description: "Автоматизируйте продажи на Авито с помощью ИИ-бота. Умные автоответы, консультации по товарам 24/7, обучение на вашей базе знаний (RAG). Повысьте конверсию и лояльность клиентов."
+};
+
+const miconItems = [
+    { title: "Автоответы 24/7", desc: "Мгновенные ответы на сообщения в Авито. Бот не спит и не пропускает ни одного потенциального клиента." },
+    { title: "Умный Ассистент", desc: "ИИ анализирует описание товара и отвечает на сложные вопросы покупателей на основе ваших данных." },
+    { title: "Маркетинг и Продажи", desc: "Бот не просто отвечает, а ведет клиента к покупке, квалифицирует лиды и собирает контакты." }
+];
+
+const imageGenItems = [
+    {
+        icon: "assets/images/image-generator/icon-1.png",
+        title: "Интеграция с Авито",
+        desc: "Подключите вашего ИИ-агента к кабинету Авито за 5 минут и начните автоматизировать общение."
+    },
+    {
+        icon: "assets/images/image-generator/icon-2.png",
+        title: "RAG Обучение",
+        desc: "Загрузите прайс-листы, скрипты продаж или FAQ. Бот будет использовать эту информацию для точных ответов."
+    },
+    {
+        icon: "assets/images/image-generator/icon-3.png",
+        title: "Аналитика Диалогов",
+        desc: "Отслеживайте эффективность ИИ-ассистента, просматривайте историю переписки и улучшайте стратегию продаж."
+    }
+];
+
+const marqueeItems = [
+    { text: "ИИ-Агент Авито" },
+    { text: "Автоответы" },
+    { text: "Чат-бот для бизнеса" },
+    { text: "RAG Система" },
+    { text: "Автоматизация Авито" },
+    { text: "Продажи 24/7" }
+];
+---
+
+<Layout title={seoData.title} description={seoData.description}>
+    <Hero 
+        subTitle="Ваш идеальный менеджер по продажам на Авито"
+        title="Умный ИИ-агент для"
+        titleAccent="Авито"
+        titleMinutes="за 5 минут"
+        desc="BotSync предоставляет мощные инструменты для автоматизации Авито. Наш ИИ-ассистент обучается на ваших данных (RAG), понимает контекст и помогает закрывать сделки быстрее. Интеллектуальный маркетинг и поддержка в одном решении."
+    />
+    <Gallery/>
+    <Micon items={miconItems}/>
+    <ImageGenerator 
+        titlePre="Возможности "
+        titleAccent="BotSync"
+        titlePost=" для Авито"
+        items={imageGenItems}
+    />
+    <Why 
+        subTitle="Эффективность и Скорость"
+        titlePre="Почему ваш "
+        titleAccent="Авито-бизнес"
+        titlePost=" нуждается в ИИ"
+    />
+    <Projects 
+        titlePre="Результаты "
+        titleAccent="Внедрения"
+        titlePost=""
+    />
+    <MarqueeTicker items={marqueeItems}/>
+    <HowIt 
+        titlePre="Запустите "
+        titleAccent="Автоответы"
+        titlePost=" за 3 шага"
+    />
+    <Video />
+    <Testimonials />
+    <Pricing />
+    <Team 
+        titlePre="Поддержка "
+        titleAccent="BotSync"
+    />
+    <Faq />
+    <Blog 
+        subTitle="Блог об ИИ"
+        titlePre="Статьи об "
+        titleAccent="Автоматизации"
+        titlePost=""
+    />
+</Layout>

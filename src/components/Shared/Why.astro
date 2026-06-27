@@ -1,5 +1,46 @@
 ---
+interface WhyItem {
+    icon: string;
+    title: string;
+    desc: string;
+}
 
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    items?: WhyItem[];
+}
+
+const {
+    subTitle = "Почему BotSync",
+    titlePre = "Почему стоит выбрать нашу ",
+    titleAccent = "RAG-платформу",
+    titlePost = "?",
+    items = [
+        {
+            icon: "assets/images/why/icon-1.png",
+            title: "Экономия времени",
+            desc: "Автоматизируйте до 80% рутинных запросов клиентов, освобождая сотрудников для решения действительно сложных и творческих задач."
+        },
+        {
+            icon: "assets/images/why/icon-2.png",
+            title: "Мультимодальность",
+            desc: "Наш ИИ понимает не только текст, но и голосовые сообщения, а также умеет работать со сложными структурами данных и таблицами."
+        },
+        {
+            icon: "assets/images/why/icon-3.png",
+            title: "Безопасность данных",
+            desc: "Ваша интеллектуальная собственность остается под защитой. Мы обеспечиваем конфиденциальность данных при обучении ваших локальных моделей."
+        },
+        {
+            icon: "assets/images/why/icon-4.png",
+            title: "Легкая интеграция",
+            desc: "Установите готовый виджет на сайт за одну минуту или используйте наше мощное API для глубокой интеграции в ваши рабочие процессы."
+        }
+    ]
+} = Astro.props;
 ---
 <!-- why section start -->
 <section class="why-section mlr">
@@ -13,65 +54,26 @@
                 <div class="col-lg-4">
                     <!-- section title start -->
                     <div class="section-title wow fadeInUp" data-wow-delay=".2s">
-                        <span class="sub-title">Почему BotSync</span>
-                        <h2>Почему стоит выбрать нашу <span>RAG-платформу</span>?</h2>
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
                     </div>
                     <!-- section title end -->
                 </div>
                 <div class="col-lg-8">
                     <div class="why-box">
-                        <!-- why items start -->
-                        <div class="why-items right-after wow fadeInUp" data-wow-delay=".3s">
-                            <div class="why-icon">
-                                <figure>
-                                    <img src="assets/images/why/icon-1.png" alt="why one">
-                                </figure>
+                        {items.map((item, index) => (
+                            <div class="why-items right-after wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`}>
+                                <div class="why-icon">
+                                    <figure>
+                                        <img src={item.icon} alt={item.title}>
+                                    </figure>
+                                </div>
+                                <div class="why-content">
+                                    <h2>{item.title}</h2>
+                                    <p>{item.desc}</p>
+                                </div>
                             </div>
-                            <div class="why-content">
-                                <h2>Экономия времени</h2>
-                                <p>Автоматизируйте до 80% рутинных запросов клиентов, освобождая сотрудников для решения действительно сложных и творческих задач.</p>
-                            </div>
-                        </div>
-                        <!-- why items end -->
-                        <!-- why items start -->
-                        <div class="why-items right-after wow fadeInUp" data-wow-delay=".4s">
-                            <div class="why-icon">
-                                <figure>
-                                    <img src="assets/images/why/icon-2.png" alt="why two">
-                                </figure>
-                            </div>
-                            <div class="why-content">
-                                <h2>Мультимодальность</h2>
-                                <p>Наш ИИ понимает не только текст, но и голосовые сообщения, а также умеет работать со сложными структурами данных и таблицами.</p>
-                            </div>
-                        </div>
-                        <!-- why items end -->
-                        <!-- why items start -->
-                        <div class="why-items right-after wow fadeInUp" data-wow-delay=".5s">
-                            <div class="why-icon">
-                                <figure>
-                                    <img src="assets/images/why/icon-3.png" alt="why three">
-                                </figure>
-                            </div>
-                            <div class="why-content">
-                                <h2>Безопасность данных</h2>
-                                <p>Ваша интеллектуальная собственность остается под защитой. Мы обеспечиваем конфиденциальность данных при обучении ваших локальных моделей.</p>
-                            </div>
-                        </div>
-                        <!-- why items end -->
-                        <!-- why items start -->
-                        <div class="why-items right-after wow fadeInUp" data-wow-delay=".6s">
-                            <div class="why-icon">
-                                <figure>
-                                    <img src="assets/images/why/icon-4.png" alt="why four">
-                                </figure>
-                            </div>
-                            <div class="why-content">
-                                <h2>Легкая интеграция</h2>
-                                <p>Установите готовый виджет на сайт за одну минуту или используйте наше мощное API для глубокой интеграции в ваши рабочие процессы.</p>
-                            </div>
-                        </div>
-                        <!-- why items end -->
+                        ))}
                     </div>
                 </div>
             </div>

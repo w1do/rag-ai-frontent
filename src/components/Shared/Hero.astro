@@ -1,5 +1,30 @@
 ---
+interface Props {
+    subTitle?: string;
+    title?: string;
+    titleAccent?: string;
+    titleMinutes?: string;
+    desc?: string;
+    inputPlaceholder?: string;
+    features?: string[];
+}
 
+const {
+    subTitle = "ИИ-автоматизация для масштабируемого бизнеса",
+    title = "Создайте умного",
+    titleAccent = "ИИ-агента",
+    titleMinutes = "за 5 минут",
+    desc = "BotSync — лучшая RAG-платформа для бизнеса. Наш конструктор ИИ-ботов позволяет обучить ассистента на ваших документах, базе знаний и сайте мгновенно. Автоматизируйте поддержку и продажи с помощью передовых технологий LLM.",
+    inputPlaceholder = "Опишите, какую задачу должен решать ваш ИИ-бот...",
+    features = [
+        "Обучение на PDF",
+        "Парсинг сайтов",
+        "Голосовые RAG",
+        "Интеграция по API",
+        "Виджет на сайт",
+        "JSON данные"
+    ]
+} = Astro.props;
 ---
 <!-- hero section start -->
 <section class="hero-section-3">
@@ -18,10 +43,10 @@
                     <!-- hero content start -->
                     <div class="hero-content">
                         <div class="section-title align-items-center">
-                            <span class="sub-title">ИИ-автоматизация для масштабируемого бизнеса</span>
-                            <h1>Создайте умного
-                                <span>ИИ-агента</span>
-                                за 5 <span class="prompt">
+                            <span class="sub-title">{subTitle}</span>
+                            <h1>{title}
+                                <span>{titleAccent}</span>
+                                <span class="prompt">
                                                 <svg class="circle1" width="8" height="8" viewBox="0 0 8 8" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
@@ -30,7 +55,7 @@
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
                                                 </svg>
-                                                минут
+                                                {titleMinutes}
                                                 <svg class="circle3" width="8" height="8" viewBox="0 0 8 8" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
@@ -42,14 +67,14 @@
                                             </span>
                                 <img src="assets/images/hero/tag-image.png" alt="tag image">
                             </h1>
-                            <p class="desc">BotSync — лучшая RAG-платформа для бизнеса. Наш конструктор ИИ-ботов позволяет обучить ассистента на ваших документах, базе знаний и сайте мгновенно. Автоматизируйте поддержку и продажи с помощью передовых технологий LLM.</p>
+                            <p class="desc">{desc}</p>
                         </div>
 
                         <div class="hero-input-box">
                             <form action="#" class="input-form" id="input-forms">
                                 <div class="hero-input-group">
                                                 <textarea name="search" id="search"
-                                                          placeholder="Опишите, какую задачу должен решать ваш ИИ-бот..."></textarea>
+                                                          placeholder={inputPlaceholder}></textarea>
                                 </div>
                                 <div class="hero-input-buttons">
                                     <div class="hero-button-left">
@@ -71,12 +96,9 @@
 
                         <div class="hero-footer">
                             <ul>
-                                <li>Обучение на PDF</li>
-                                <li>Парсинг сайтов</li>
-                                <li>Голосовые RAG</li>
-                                <li>Интеграция по API</li>
-                                <li>Виджет на сайт</li>
-                                <li>JSON данные</li>
+                                {features.map((feature) => (
+                                    <li>{feature}</li>
+                                ))}
                             </ul>
                         </div>
 
