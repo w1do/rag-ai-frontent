@@ -1,8 +1,10 @@
 ---
-import Header from "../components/Layout/Header.astro";
-import Preloader from "../components/Layout/Preloader.astro";
-import Footer from "../components/Layout/Footer.astro";
-import Scripts from "../components/Layout/Scripts.astro";
+import Header from "@/components/Layout/Header.astro";
+import Preloader from "@/components/Layout/Preloader.astro";
+import Footer from "@/components/Layout/Footer.astro";
+import Scripts from "@/components/Layout/Scripts.astro";
+import BackTop from "@/components/Layout/BackTop.astro";
+import Sidebar from "@/components/Layout/Sidebar.astro";
 
 interface Props {
     title?: string;
@@ -45,17 +47,14 @@ const { title, description } = Astro.props;
 <div class="page-wrapper">
     <Preloader />
     
-    <!-- back to top start -->
-    <button id="back-top" class="back-to-top" aria-label="back to top">
-        <i class="fa-solid fa-chevron-up"></i>
-    </button>
-    <!-- back to top end -->
+    <BackTop />
 
     <!-- mouse cursor start -->
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
     <!-- mouse cursor end -->
 
+    <Sidebar/>
     <Header/>
 
 
