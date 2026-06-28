@@ -3,6 +3,31 @@ import { getCollection } from 'astro:content';
 
 const possibilities = await getCollection('possibilities');
 const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.order);
+
+interface Bot {
+    id: number;
+    name: string;
+    slug: string;
+    description?: string;
+}
+
+let bots: Bot[] = [];
+try {
+    const res = await fetch('https://api.botsync.ru/api/chats', {
+        headers: {
+            'accept': 'application/json'
+        }
+    });
+    if (res.ok) {
+        const data = await res.json();
+        bots = data.data || [];
+    }
+} catch (e) {
+    console.error('Error fetching bots:', e);
+}
+
+// В шапке показываем только 10 примеров ботов
+const headerBots = bots.slice(0, 10);
 ---
 
 <!-- header start -->
@@ -61,6 +86,19 @@ const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.o
                                                         </a>
                                                     </li>
                                                 ))}
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/bots">Примеры ботов<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                {headerBots.map((bot) => (
+                                                    <li>
+                                                        <a href={`/bots/${bot.slug}`}>{bot.name}</a>
+                                                    </li>
+                                                ))}
+                                                <li class="menu-view-all">
+                                                    <a href="/bots">Смотреть всех ботов <i class="fa-solid fa-arrow-right"></i></a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -136,3 +174,14 @@ const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.o
     <!-- search box end -->
 </header>
 <!-- header end-->
+
+<style>
+    .main-menu .submenu .menu-view-all a {
+        font-weight: 600;
+        color: var(--primary-color, #6a5af9);
+    }
+
+    .main-menu .submenu .menu-view-all a i {
+        margin-left: 6px;
+    }
+</style>
