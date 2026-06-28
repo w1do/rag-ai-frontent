@@ -23,3 +23,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+AGENTS.md
+CLAUDE.md
+PLAN.md
+SUMMARY.md
+./.agents
+/.junie
