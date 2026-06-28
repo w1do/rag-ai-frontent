@@ -17,61 +17,71 @@ interface Props {
     yearlyPlans?: PricingPlan[];
 }
 
+const commonFeatures = [
+    "Обращение к API",
+    "Обучение голосом",
+    "Обучение на конкурентах",
+    "Обучение на документах",
+    "Обучение JSON",
+    "Подключение мессенджеров (max, telegram, vk, vc)",
+    "Автопубликации по базе знаний"
+];
+
 const {
     subTitle = "Тарифные планы",
-    titlePre = "Выберите ",
-    titleAccent = "идеальный план",
-    titlePost = " для успеха вашего бизнеса",
+    titlePre = "Подключить ИИ ",
+    titleAccent = "к",
+    titlePost = " бизнесу",
     monthlyPlans = [
         {
             icon: "assets/images/pricing/pricing-icon-1.png",
-            price: "$39",
-            tag: "Стартовый",
-            features: ["1 ИИ-бот на базе RAG", "Обучение на 50 документах", "До 1000 сообщений в месяц", "Базовая аналитика диалогов", "Виджет на 1 сайт"],
+            price: "100 руб",
+            tag: "Попробовать (3 дня)",
+            features: ["5 диалогов", ...commonFeatures],
             btnText: "Выбрать тариф",
-            btnLink: "#contact"
+            btnLink: "/contact"
         },
         {
             icon: "assets/images/pricing/pricing-icon-2.png",
-            price: "$79",
-            tag: "Профессиональный",
-            features: ["3 ИИ-бота на базе RAG", "Обучение на 200 документах", "До 5000 сообщений в месяц", "Расширенная аналитика и экспорт", "Приоритетная поддержка"],
+            price: "350 руб/мес",
+            tag: "Базовый",
+            features: ["120 диалогов в месяц", ...commonFeatures],
             btnText: "Выбрать тариф",
-            btnLink: "#contact"
+            btnLink: "/contact"
         },
         {
             icon: "assets/images/pricing/pricing-icon-3.png",
-            price: "$199",
-            tag: "Корпоративный",
-            features: ["Безлимитное количество ботов", "Обучение на любых объемах данных", "Выделенный сервер для LLM", "Индивидуальные интеграции по API", "Персональный менеджер 24/7"],
-            btnText: "Связаться с нами",
-            btnLink: "#contact"
+            price: "880 руб/мес",
+            tag: "Продвинутый",
+            features: ["1800 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
         }
     ],
     yearlyPlans = [
         {
             icon: "assets/images/pricing/pricing-icon-1.png",
-            price: "59 USD",
-            tag: "Starter",
-            features: ["60+ Premium features", "Unlimited supports", "90+ Expert members", "Data Insights", "Lifetime Updates"],
-            btnText: "Choose Plan",
-            btnLink: "pricing.html"
+            price: "1000 руб",
+            tag: "Попробовать",
+            features: ["30 диалогов", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
         },
         {
             icon: "assets/images/pricing/pricing-icon-2.png",
-            price: "99 USD",
-            tag: "Pro Plan",
-            features: ["60+ Premium features", "Unlimited supports", "90+ Expert members", "Data Insights", "Lifetime Updates"],
-            btnText: "Choose Plan",
-            btnLink: "pricing.html"
+            price: "3500 руб",
+            tag: "Базовый",
+            features: ["120 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
         },
         {
             icon: "assets/images/pricing/pricing-icon-3.png",
-            price: "150 USD",
-            tag: "Enterprise Plan",
-            features: ["60+ Premium features", "Unlimited supports", "90+ Expert members", "Data Insights", "Lifetime Updates"],
-            btnText: "Choose Plan",
-            btnLink: "pricing.html"
+            price: "8800 руб",
+            tag: "Продвинутый",
+            features: ["1800 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
         }
     ]
 } = Astro.props;
@@ -129,7 +139,6 @@ const {
                                                 </div>
                                                 <div class="pricing-top-content">
                                                     <h2>{plan.price}</h2>
-                                                    <p>При оплате за год — скидка 30%</p>
                                                 </div>
                                             </div>
                                             <div class="pricing-tag">

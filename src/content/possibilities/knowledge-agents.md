@@ -1,5 +1,5 @@
 ---
-title: "Knowledge Agents"
+title: "База знаний RAG для ИИ агента"
 description: "ИИ-агенты для работы с документами. Наша разработка rag превращает PDF и таблицы в актив. Этот ии бот предоставляет точные ответы на базе LangChain, обеспечивая качественный поиск по базе знаний компании."
 category: "Knowledge Management"
 image: "/assets/images/services/services-2-5.png"
@@ -17,12 +17,12 @@ whatWeDoList:
   - "Разработка систем Retrieval-Augmented Generation"
   - "Настройка прав доступа к информации"
 benefits:
-  - title: "Expert developer"
-    description: "Специалисты по LangChain и архитектуре RAG."
-  - title: "Customer Care"
-    description: "Мгновенные и точные ответы для ваших клиентов на базе инструкций."
-  - title: "Efficiency"
-    description: "Сотрудники тратят на поиск информации секунды вместо часов."
+  - title: "Обучение на данных"
+    description: "RAG чат бот мгновенно находит точные ответы, опираясь на вашу базу знаний."
+  - title: "Экспертная архитектура"
+    description: "Разработка RAG агентов на базе LangChain и современных LLM моделей."
+  - title: "Эффективность команды"
+    description: "Искусственный интеллект сокращает время поиска информации для сотрудников."
 faqs:
   - question: "Какие форматы документов поддерживаются?"
     answer: "Мы работаем с PDF, DOCX, TXT, CSV, а также можем парсить сайты и базы данных."
