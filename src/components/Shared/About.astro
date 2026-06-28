@@ -1,39 +1,38 @@
 ---
+export interface AboutFeature {
+    icon?: string;
+    title: string;
+    desc: string;
+}
 
+export interface Props {
+    subTitle?: string;
+    title: string;
+    titleAccent?: string;
+    desc?: string;
+    paragraphs?: string[];
+    features?: AboutFeature[];
+    phone?: string;
+    phoneLabel?: string;
+    image?: string;
+    contentTitle?: string;
+    contentItems?: { title: string; desc: string }[];
+}
+
+const {
+    subTitle = "О боте",
+    title,
+    titleAccent = "",
+    desc = "",
+    paragraphs = [],
+    features = [],
+    phone,
+    phoneLabel = "Связаться с нами",
+    image = "/assets/images/about/about-2-1-1.jpg",
+    contentTitle,
+    contentItems = [],
+} = Astro.props;
 ---
-<!-- breadcrumb section start -->
-<section class="breadcrumb-section pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="/assets/images/breadcrumb/breadcrumb-shape-line.png">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- breadcrumb content start -->
-                <div class="breadcrumb-content">
-                    <!-- breadcrumb title start -->
-                    <div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s">
-                        <h1>About Us</h1>
-                    </div>
-                    <!-- breadcrumb title end -->
-                    <!-- nav start -->
-                    <nav aria-label="breadcrumb" class="wow fadeInUp" data-wow-delay=".3s">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index-1.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">About Us</li>
-                        </ol>
-                    </nav>
-                    <!-- nav end -->
-                </div>
-                <!-- breadcrumb content end -->
-            </div>
-        </div>
-    </div>
-    <div class="breadcrumb-shape">
-        <img class="breadcrumb-shape-one" src="/assets/images/breadcrumb/breadcrumb-shape-1-1.png" alt="breadcrumb shape one">
-        <img class="breadcrumb-shape-two" src="/assets/images/breadcrumb/breadcrumb-shape-2-1.png" alt="breadcrumb shape two">
-        <img class="breadcrumb-shado-top" src="/assets/images/breadcrumb/breadcrumb-shado-top-1.png" alt="breadcrumb shape top">
-        <img class="breadcrumb-shado-bottom" src="/assets/images/breadcrumb/breadcrumb-shado-bottom-1.png" alt="breadcrumb shape bottom">
-    </div>
-</section>
-<!-- breadcrumb section end -->
 
 <!-- about section start -->
 <section class="about-section-2 pt-100 md-pt-80 pb-100 md-pb-80">
@@ -44,74 +43,64 @@
                 <div class="about-left wow fadeInUp" data-wow-delay=".2s">
                     <!-- section title start -->
                     <div class="section-title">
-                        <span class="sub-title">About Us</span>
-                        <h2>Redefining Creativity with the <span>Power of AI.</span></h2>
-                        <p>The best AI image generator for creators. Our AI art generator and AI photo generator transforms your text to image instantly. Create photorealistic photos, digital art, anime, and more simply describe what you want.</p>
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{title} {titleAccent && <span>{titleAccent}</span>}</h2>
+                        {desc && <p>{desc}</p>}
+                        {paragraphs.map((p) => <p>{p}</p>)}
                     </div>
                     <!-- section title end -->
 
-                    <!-- about features wappper start -->
-                    <div class="about-features-wappper">
-                        <div class="about-features-item">
-                            <div class="about-features-icon">
-                                <figure>
-                                    <img src="/assets/images/about/icon-2-1-1.png" alt="icon about one">
-                                </figure>
-                            </div>
-                            <div class="about-features-title">
-                                <h3>AI-Powered Innovation</h3>
-                                <p>The AI Lorem ipsum dolor sit amet consectetur</p>
-                            </div>
+                    {features.length > 0 && (
+                        <div class="about-features-wappper">
+                            {features.map((feature, index) => (
+                                <div class="about-features-item">
+                                    <div class="about-features-icon">
+                                        <figure>
+                                            <img src={feature.icon || `/assets/images/about/icon-2-${(index % 2) + 1}-1.png`} alt={feature.title} />
+                                        </figure>
+                                    </div>
+                                    <div class="about-features-title">
+                                        <h3>{feature.title}</h3>
+                                        <p>{feature.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <div class="about-features-item">
-                            <div class="about-features-icon">
-                                <figure>
-                                    <img src="/assets/images/about/icon-2-2-1.png" alt="icon about two">
-                                </figure>
-                            </div>
-                            <div class="about-features-title">
-                                <h3>Limitless Styles</h3>
-                                <p>The AI Lorem ipsum dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- about features wappper end -->
+                    )}
 
-                    <!-- about footer start -->
-                    <div class="about-footer">
-                        <div class="about-contact-box">
-                            <div class="icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="about-contact-box-content">
-                                <p>For Emergency, Call Now</p>
-                                <a href="tel:+123446788">+1 234 467 88</a>
+                    {phone && (
+                        <div class="about-footer">
+                            <div class="about-contact-box">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="about-contact-box-content">
+                                    <p>{phoneLabel}</p>
+                                    <a href={`tel:${phone.replace(/\s+/g, "")}`}>{phone}</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- about footer end -->
+                    )}
                 </div>
                 <!-- about left end -->
             </div>
             <div class="col-lg-6">
                 <!-- about right start -->
                 <div class="about-right wow fadeInUp" data-wow-delay=".3s">
-                    <!-- about content box start -->
-                    <div class="about-content-box">
-                        <div class="about-content-item mb-30">
-                            <p class="about-text">Our Mission</p>
-                            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati accusantium.</p>
+                    {contentItems.length > 0 && (
+                        <div class="about-content-box">
+                            {contentItems.map((item, index) => (
+                                <div class={`about-content-item ${index < contentItems.length - 1 ? "mb-30" : ""}`}>
+                                    <p class="about-text">{item.title}</p>
+                                    <p class="desc">{item.desc}</p>
+                                </div>
+                            ))}
                         </div>
-                        <div class="about-content-item">
-                            <p class="about-text">Our Vision</p>
-                            <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati accusantium.</p>
-                        </div>
-                    </div>
-                    <!-- about content box end -->
+                    )}
                     <!-- about image start -->
                     <div class="about-image-2">
                         <figure class="image-anime">
-                            <img src="/assets/images/about/about-2-1-1.jpg" alt="about two">
+                            <img src={image} alt={contentTitle || title} />
                         </figure>
                     </div>
                     <!-- about image end -->
@@ -121,487 +110,4 @@
         </div>
     </div>
 </section>
-<!-- services section end -->
-
-<!-- counter section start -->
-<section class="counter-section-1 pb-100 md-pb-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- counter list start -->
-                <div class="counter-list grid-4">
-                    <!-- counter item start -->
-                    <div class="counter-item wow fadeInUp" data-wow-delay=".2s">
-                        <div class="counter-icon">
-                            <figure>
-                                <img src="/assets/images/counter/icon-counter-one-1.png" alt="counter icon one">
-                            </figure>
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-text"><span class="counter-value" data-stop="58" data-speed="3000">0</span>+</div>
-                            <h2 class="counter-title">Project Completed</h2>
-                        </div>
-                    </div>
-                    <!-- counter item end -->
-                    <!-- counter item start -->
-                    <div class="counter-item wow fadeInUp" data-wow-delay=".3s">
-                        <div class="counter-icon">
-                            <figure>
-                                <img src="/assets/images/counter/icon-counter-two-1.png" alt="counter icon two">
-                            </figure>
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-text"><span class="counter-value" data-stop="6" data-speed="3000">0</span>+</div>
-                            <h2 class="counter-title">Creative Minds</h2>
-                        </div>
-                    </div>
-                    <!-- counter item end -->
-                    <!-- counter item start -->
-                    <div class="counter-item wow fadeInUp" data-wow-delay=".4s">
-                        <div class="counter-icon">
-                            <figure>
-                                <img src="/assets/images/counter/icon-counter-three-1.png" alt="counter icon three">
-                            </figure>
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-text"><span class="counter-value" data-stop="36" data-speed="3000">0</span>+</div>
-                            <h2 class="counter-title">Happy Customers</h2>
-                        </div>
-                    </div>
-                    <!-- counter item end -->
-                    <!-- counter item start -->
-                    <div class="counter-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="counter-icon">
-                            <figure>
-                                <img src="/assets/images/counter/icon-counter-four-1.png" alt="counter icon four">
-                            </figure>
-                        </div>
-                        <div class="counter-content">
-                            <div class="counter-text"><span class="counter-value" data-stop="50" data-speed="3000">0</span>+</div>
-                            <h2 class="counter-title">Collaborative Team</h2>
-                        </div>
-                    </div>
-                    <!-- counter item end -->
-                </div>
-                <!-- counter list end -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- counter section end -->
-
-<!-- video section start -->
-<div class="video-section-1 mlr">
-    <div class="video-wapper" data-img-src="/assets/images/video/bg-vodeo-1.jpg">
-        <div class="video-circle">
-            <div class="cta-video-wapper wow fadeInUp" data-wow-delay=".2s">
-                <a class="video-popup video-play play-center text-accent-one" href="https://www.youtube.com/watch?v=Y-x0efG1seA" aria-label="play video">
-                    <span class="icon"><i class="fa-solid fa-play"></i></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- video section end -->
-
-<!-- testimonials section start -->
-<section class="testimonials-section-1 pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="/assets/images/testimonials/testimonials-bg.svg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- section title start -->
-                <div class="section-title text-center mb-30 wow fadeInUp" data-wow-delay=".2s">
-                    <span class="sub-title">Testimonials</span>
-                    <h2>What <span>Client</span> Say?</h2>
-                </div>
-                <!-- section title end -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- testimonials slider start -->
-                <div class="swiper testimonials-slider-three">
-                    <!-- swiper wrapper start -->
-                    <div class="swiper-wrapper">
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- testimonials item start -->
-                            <div class="testimonials-item right-after">
-                                <div class="testimonials-meta">
-                                    <div class="testimonials-quote">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                </div>
-                                <div class="testimonials-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisc eiusmod tempor incididunt ut labore etedum doad minim veniam, a uis nostr incidi dunt ut laborci tempor incididunt ut labore cididunt ut labore etedu doad minim. a uis nostr incididunt.</p>
-                                </div>
-                                <div class="testimonials-author-box">
-                                    <div class="testimonials-author">
-                                        <div class="testimonials-author-content">
-                                            <h2>Nasir Jamil</h2>
-                                            <p>Volunteer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- testimonials item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- testimonials item start -->
-                            <div class="testimonials-item right-after">
-                                <div class="testimonials-meta">
-                                    <div class="testimonials-quote">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                </div>
-                                <div class="testimonials-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisc eiusmod tempor incididunt ut labore etedum doad minim veniam, a uis nostr incidi dunt ut laborci tempor incididunt ut labore cididunt ut labore etedu doad minim. a uis nostr incididunt.</p>
-                                </div>
-                                <div class="testimonials-author-box">
-                                    <div class="testimonials-author">
-                                        <div class="testimonials-author-content">
-                                            <h2>Nasir Jamil</h2>
-                                            <p>Volunteer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- testimonials item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- testimonials item start -->
-                            <div class="testimonials-item right-after">
-                                <div class="testimonials-meta">
-                                    <div class="testimonials-quote">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                </div>
-                                <div class="testimonials-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisc eiusmod tempor incididunt ut labore etedum doad minim veniam, a uis nostr incidi dunt ut laborci tempor incididunt ut labore cididunt ut labore etedu doad minim. a uis nostr incididunt.</p>
-                                </div>
-                                <div class="testimonials-author-box">
-                                    <div class="testimonials-author">
-                                        <div class="testimonials-author-content">
-                                            <h2>Nasir Jamil</h2>
-                                            <p>Volunteer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- testimonials item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- testimonials item start -->
-                            <div class="testimonials-item right-after">
-                                <div class="testimonials-meta">
-                                    <div class="testimonials-quote">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                </div>
-                                <div class="testimonials-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisc eiusmod tempor incididunt ut labore etedum doad minim veniam, a uis nostr incidi dunt ut laborci tempor incididunt ut labore cididunt ut labore etedu doad minim. a uis nostr incididunt.</p>
-                                </div>
-                                <div class="testimonials-author-box">
-                                    <div class="testimonials-author">
-                                        <div class="testimonials-author-content">
-                                            <h2>Nasir Jamil</h2>
-                                            <p>Volunteer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- testimonials item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                    </div>
-                    <!-- swiper wrapper end -->
-                    <!-- swiper actions start -->
-                    <div class="swiper-actions ms-2 text-center">
-                        <div class="dot"></div>
-                    </div>
-                    <!-- swiper actions end -->
-                </div>
-                <!-- testimonials slider end -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- testimonials section end -->
-
-<!-- faq section start -->
-<section class="faq-section-1 pb-100 md-pb-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <!-- faq left start -->
-                <div class="faq-left wow fadeInUp" data-wow-delay=".2s">
-                    <!-- section title start -->
-                    <div class="section-title">
-                        <span class="sub-title">Our Faq's</span>
-                        <h2>Have any <span>questions?</span> We're here to help you</h2>
-                        <p>We're here to help you with any questions you might have. Our team is ready to provide you with the information and support you need.</p>
-                    </div>
-                    <!-- section title end -->
-                </div>
-                <!-- faq left end -->
-            </div>
-            <div class="col-lg-7">
-                <!-- faq-content start -->
-                <div class="faq-content wow fadeInUp" data-wow-delay=".3s">
-                    <!-- accordion start -->
-                    <div class="accordion" id="accordionExample">
-                        <!-- accordion item start -->
-                        <div class="accordion-item">
-                            <!-- accordion-header start -->
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is this project management platform used for?
-                                </button>
-                            </h2>
-                            <!-- accordion header end -->
-                            <!-- accordion collapse start -->
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                <!-- accordion body start -->
-                                <div class="accordion-body">
-                                    <div class="inner">
-                                        <div class="accordion-content">
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                                more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- accordion body end -->
-                            </div>
-                            <!-- accordion collapse end -->
-                        </div>
-                        <!-- accordion item end -->
-                        <!-- accordion item start -->
-                        <div class="accordion-item">
-                            <!-- accordion-header start -->
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Who is this platform best suited for?
-                                </button>
-                            </h2>
-                            <!-- accordion header end -->
-                            <!-- accordion collapse start -->
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <!-- accordion body start -->
-                                <div class="accordion-body">
-                                    <div class="inner">
-                                        <div class="accordion-content">
-                                            <p>
-                                                It depends on your lifestyle. Contact lenses offer convenience for sports and aesthetics, while glasses are easier to maintain and cost-effective over time. An eye doctor
-                                                can help you decide what suits you best.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- accordion body end -->
-                            </div>
-                            <!-- accordion collapse end -->
-                        </div>
-                        <!-- accordion item end -->
-                        <!-- accordion item start -->
-                        <div class="accordion-item">
-                            <!-- accordion-header start -->
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Can I manage multiple projects at the same time?
-                                </button>
-                            </h2>
-                            <!-- accordion header end -->
-                            <!-- accordion collapse start -->
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <!-- accordion body start -->
-                                <div class="accordion-body">
-                                    <div class="inner">
-                                        <p>
-                                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                            more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- accordion body end -->
-                            </div>
-                            <!-- accordion collapse end -->
-                        </div>
-                        <!-- accordion item end -->
-                        <!-- accordion item start -->
-                        <div class="accordion-item">
-                            <!-- accordion-header start -->
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Does it support team collaboration?
-                                </button>
-                            </h2>
-                            <!-- accordion-header end -->
-                            <!-- accordion collapse start -->
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <!-- accordion body start -->
-                                <div class="accordion-body">
-                                    <div class="inner">
-                                        <div class="accordion-content">
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                                more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- accordion body end -->
-                            </div>
-                            <!-- accordion collapse end-->
-                        </div>
-                        <!-- accordion item end -->
-                        <!-- accordion item start -->
-                        <div class="accordion-item">
-                            <!-- accordion-header start -->
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Is the platform suitable for remote or distributed teams?
-                                </button>
-                            </h2>
-                            <!-- accordion-header end -->
-                            <!-- accordion collapse start -->
-                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <!-- accordion body start -->
-                                <div class="accordion-body">
-                                    <div class="inner">
-                                        <div class="accordion-content">
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                                more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- accordion body end -->
-                            </div>
-                            <!-- accordion collapse end-->
-                        </div>
-                        <!-- accordion item end -->
-                    </div>
-                    <!-- accordion end -->
-                </div>
-                <!-- faq-content end -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- faq section end -->
-
-<!-- partners section start -->
-<section class="partners-section-3 pb-100 md-pb-80">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- section title start -->
-                <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
-                    <span class="sub-title">Our Partners</span>
-                    <h2>Partners Who <span>Trust Industry</span></h2>
-                </div>
-                <!-- section title end -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <!-- partners slider start -->
-                <div class="swiper partners-slider">
-                    <!-- swiper wrapper start -->
-                    <div class="swiper-wrapper">
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-1-1.png" alt="partners one">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-2-1.png" alt="partners two">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-3-1.png" alt="partners three">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-4-1.png" alt="partners four">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-5-1.png" alt="partners five">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                        <!-- swiper slide start -->
-                        <div class="swiper-slide">
-                            <!-- partners item start -->
-                            <div class="partners-item">
-                                <div class="partners-image text-center">
-                                    <figure>
-                                        <img src="/assets/images/partners/partners-6-1.png" alt="partners six">
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- partners item end -->
-                        </div>
-                        <!-- swiper slide end -->
-                    </div>
-                    <!-- swiper wrapper end -->
-                </div>
-                <!-- partners slider end -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- partners section end -->  
+<!-- about section end -->

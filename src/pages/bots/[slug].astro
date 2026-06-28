@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Cta from "@/components/Shared/Cta.astro";
 import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+import About from "@/components/Shared/About.astro";
 import AIChat from "@/components/Shared/react/AIChat/AIChat.tsx";
 
 const API_BASE = "https://api.botsync.ru";
@@ -133,9 +134,41 @@ const faqSchema = {
     ]
 };
 
-const quickQuestions = (data.actions && data.actions.length > 0)
-    ? data.actions
-    : ["Чем ты можешь помочь?", "Как это работает?", "Расскажи подробнее"];
+// Вся информация о боте для переиспользуемого компонента About.
+const aboutParagraphs = [
+    `Хотите поговорить с искусственным интеллектом? Чат бот ${name} — это умный онлайн-собеседник на базе нейросети. Он понимает естественный язык, ведёт диалог и мгновенно отвечает на вопросы по теме «${niche || brand}». Никакой регистрации и установки приложений: общение с ботом доступно прямо на сайте.`,
+    `В отличие от обычных скриптовых ботов, ${name} построен на технологии RAG (Retrieval-Augmented Generation). Это значит, что нейросеть отвечает не «из головы», а опирается на проверенную базу знаний — поэтому ответы ИИ чат бота точные и по делу.`
+];
+
+const aboutFeatures = [
+    {
+        title: "Чат бот онлайн 24/7",
+        desc: `ИИ-ассистент ${name} на связи круглосуточно. Переписка с ботом идёт в режиме реального времени — задайте вопрос нейросети и получите ответ за секунды.`
+    },
+    {
+        title: "Умные ответы на базе RAG",
+        desc: `Нейросеть чат бот обучена на данных бренда ${brand}. Бот отвечает на вопросы, опираясь на актуальную базу знаний, а не на обобщённые данные из интернета.`
+    },
+    {
+        title: "Живое общение с нейросетью",
+        desc: `${name} общается как человек: понимает контекст переписки, уточняет детали и помогает решить ваш вопрос. Это удобный виртуальный собеседник для бизнеса и клиентов.`
+    },
+    {
+        title: "Бесплатно и без регистрации",
+        desc: `Пообщаться с ИИ можно бесплатно и без регистрации. Просто начните чат с ботом ${name} — никаких СМС и анкет не требуется.`
+    }
+];
+
+const aboutContent = [
+    {
+        title: "Как пообщаться с ботом",
+        desc: `Напишите сообщение в поле чата или выберите готовый вопрос — умный ИИ-ассистент ${name} обработает запрос с помощью нейросети и даст развёрнутый ответ онлайн.`
+    },
+    {
+        title: "Свой бот для бизнеса",
+        desc: "BotSync создаёт ИИ чат-ботов с базой знаний (RAG), обучает нейросеть на ваших документах и внедряет ассистента на сайт — автоматизация поддержки и продаж с помощью искусственного интеллекта."
+    }
+];
 ---
 
 <Layout
@@ -177,158 +210,18 @@ const quickQuestions = (data.actions && data.actions.length > 0)
     />
     <!-- AI chat end -->
 
-    <!-- semantics / landing-copy start -->
-    <section class="bot-about pt-80 md-pt-60 pb-50 md-pb-40">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h2 class="bot-about__title">Чат с ИИ-ассистентом {name}: нейросеть, которая отвечает на вопросы</h2>
-                    <p>
-                        Хотите поговорить с искусственным интеллектом? Чат бот {name} — это умный
-                        онлайн-собеседник на базе нейросети. Он понимает естественный язык, ведёт
-                        диалог и мгновенно отвечает на вопросы по теме «{niche || brand}». Никакой
-                        регистрации и установки приложений: общение с ботом доступно прямо на сайте.
-                    </p>
-                    <p>
-                        В отличие от обычных скриптовых ботов, {name} построен на технологии RAG
-                        (Retrieval-Augmented Generation). Это значит, что нейросеть отвечает не
-                        «из головы», а опирается на проверенную базу знаний — поэтому ответы ИИ
-                        чат бота точные и по делу.
-                    </p>
-
-                    <div class="row mt-40">
-                        <div class="col-md-6">
-                            <div class="bot-feature">
-                                <h3><i class="fa-solid fa-bolt"></i> Чат бот онлайн 24/7</h3>
-                                <p>
-                                    ИИ-ассистент {name} на связи круглосуточно. Переписка с ботом
-                                    идёт в режиме реального времени — задайте вопрос нейросети и
-                                    получите ответ за секунды.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bot-feature">
-                                <h3><i class="fa-solid fa-brain"></i> Умные ответы на базе RAG</h3>
-                                <p>
-                                    Нейросеть чат бот обучена на данных бренда {brand}. Бот отвечает
-                                    на вопросы, опираясь на актуальную базу знаний, а не на
-                                    обобщённые данные из интернета.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bot-feature">
-                                <h3><i class="fa-solid fa-comments"></i> Живое общение с нейросетью</h3>
-                                <p>
-                                    {name} общается как человек: понимает контекст переписки,
-                                    уточняет детали и помогает решить ваш вопрос. Это удобный
-                                    виртуальный собеседник для бизнеса и клиентов.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bot-feature">
-                                <h3><i class="fa-solid fa-gift"></i> Бесплатно и без регистрации</h3>
-                                <p>
-                                    Пообщаться с ИИ можно бесплатно и без регистрации. Просто
-                                    начните чат с ботом {name} — никаких СМС и анкет не требуется.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- semantics / landing-copy end -->
-
-    <!-- how to start start -->
-    <section class="bot-howto pb-80 md-pb-60">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h2 class="bot-about__title">Как пообщаться с чат ботом {name}</h2>
-                    <ol class="bot-steps">
-                        <li>Напишите сообщение в поле чата выше или выберите готовый вопрос.</li>
-                        <li>Умный ИИ-ассистент {name} обработает запрос с помощью нейросети.</li>
-                        <li>Получите развёрнутый ответ и продолжайте диалог с ботом онлайн.</li>
-                    </ol>
-
-                    {quickQuestions.length > 0 && (
-                        <div class="bot-suggest">
-                            <h3>О чём можно спросить нейросеть {name}:</h3>
-                            <ul class="bot-suggest__list">
-                                {quickQuestions.map((q) => (
-                                    <li>«{q}»</li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    <p class="mt-30">
-                        Хотите такой же умный чат бот для своего бизнеса? BotSync создаёт ИИ
-                        чат-ботов с базой знаний (RAG), обучает нейросеть на ваших документах и
-                        внедряет ассистента на сайт. Это автоматизация поддержки и продаж с
-                        помощью искусственного интеллекта — закажите чат бота под ваши задачи.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- how to start end -->
+    <!-- about bot / вся информация о боте start -->
+    <About
+        subTitle="Живое общение с нейросетью"
+        title={`Умный чат бот`}
+        titleAccent={name}
+        paragraphs={aboutParagraphs}
+        features={aboutFeatures}
+        phone={data.phone}
+        phoneLabel={`Связаться с ${brand}`}
+        contentItems={aboutContent}
+    />
+    <!-- about bot / вся информация о боте end -->
 
     <Cta />
 </Layout>
-
-<style>
-    .bot-about__title {
-        margin-bottom: 20px;
-    }
-
-    .bot-feature {
-        margin-bottom: 30px;
-    }
-
-    .bot-feature h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .bot-feature h3 i {
-        margin-right: 8px;
-        color: var(--primary-color, #6a5af9);
-    }
-
-    .bot-steps {
-        padding-left: 20px;
-        margin-bottom: 30px;
-    }
-
-    .bot-steps li {
-        margin-bottom: 10px;
-    }
-
-    .bot-suggest__list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .bot-suggest__list li {
-        background: rgba(106, 90, 249, 0.08);
-        border-radius: 8px;
-        padding: 8px 14px;
-        font-size: 15px;
-    }
-
-    .mt-40 {
-        margin-top: 40px;
-    }
-
-    .mt-30 {
-        margin-top: 30px;
-    }
-</style>
