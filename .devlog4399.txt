@@ -1,0 +1,15 @@
+﻿11:02:04 [vite] connected.
+11:02:04 [types] Generated 1ms
+11:02:04 [vite] connected.
+11:02:05 [content] Syncing content
+11:02:05 [content] Synced content
+11:02:05 [vite] Re-optimizing dependencies because vite config has changed
+ astro  v7.0.3 ready in 1131 ms
+тФГ Local    http://localhost:4399/
+тФГ Network  http://172.18.0.1:4399/
+           http://192.168.1.77:4399/
+           http://172.25.240.1:4399/
+           http://172.20.96.1:4399/
+11:02:05 watching for file changes...
+11:02:31 [200] / 61ms
+11:02:33 [200] / 4ms

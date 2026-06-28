@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import AIChat from "@/components/Shared/AIChat.astro";
+import AIChat from "@/components/Shared/react/AIChat/AIChat.tsx";
 
 const seoData = {
     title: "Онлайн чат с ИИ-ассистентом — задайте вопрос нейросети",
@@ -41,6 +41,7 @@ const chatSchema = {
     </section>
 
     <AIChat
+        client:visible
         title="BotSync ИИ-ассистент"
         subtitle="Онлайн-помощник на базе нейросети"
         greeting="Здравствуйте! Я — ИИ-ассистент BotSync. Задайте мне любой вопрос."

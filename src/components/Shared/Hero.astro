@@ -1,6 +1,6 @@
 ---
 import ChatHero from "@/components/Shared/ChatHero.astro";
-import AIChat from "@/components/Shared/AIChat.astro";
+import AIChat from "@/components/Shared/react/AIChat/AIChat.tsx";
 interface Props {
     subTitle?: string;
     title?: string;
@@ -73,6 +73,7 @@ const {
                         </div>
 
                         <AIChat
+                                client:visible
                                 title="BotSync ИИ-ассистент"
                                 subtitle="Онлайн-помощник на базе нейросети"
                                 greeting="Здравствуйте! Я — ИИ-ассистент BotSync. Задайте мне любой вопрос."
