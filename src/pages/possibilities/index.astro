@@ -5,8 +5,13 @@ import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
 
 const possibilities = await getCollection('possibilities');
 const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.order);
+
+const seoData = {
+    title: "Создания умных ИИ-ботов c базой знаний для бизнеса",
+    description: "Возможности BotSync: умные чат-боты на нейросети, RAG база знаний, обучение на документах и сайтах, голосовые ИИ-ассистенты, интеграция виджета на сайт и через API."
+};
 ---
-<Layout>
+<Layout title={seoData.title} description={seoData.description}>
 
 <Breadcrumb title="Возможности BotSync" items={[
     { name: "Главная", url: "/" },

@@ -2,8 +2,13 @@
 import Layout from "@/layouts/Layout.astro";
 import Cta from "@/components/Shared/Cta.astro";
 import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+
+const seoData = {
+    title: "Вопросы и ответы об ИИ-ботах и RAG-системах",
+    description: "Частые вопросы о платформе BotSync: что такое RAG и LLM, как обучить чат-бота на своих данных, интеграция на сайт и через API, тарифы и поддержка ИИ-ассистента."
+};
 ---
-<Layout>
+<Layout title={seoData.title} description={seoData.description}>
     <Breadcrumb title="FAQ" />
 
     <!-- faq section start -->

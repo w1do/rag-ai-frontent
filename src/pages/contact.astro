@@ -1,8 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+
+const seoData = {
+    title: "Контакты — связаться с командой BotSync",
+    description: "Свяжитесь с BotSync: поможем создать умного ИИ чат-бота с базой знаний RAG, ответим на вопросы по интеграции, обучению нейросети и тарифам. Telegram, email, телефон."
+};
 ---
-<Layout>
+<Layout title={seoData.title} description={seoData.description}>
     <Breadcrumb title="Контакты" />
 
     <!-- contact section start -->
