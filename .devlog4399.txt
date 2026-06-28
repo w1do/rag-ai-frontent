@@ -16,3 +16,17 @@
 11:06:37 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
 11:07:01 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
 11:07:12 [watch] /src/components/Shared/react/AIChat/AIChat.css
+11:11:00 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:11:05 [watch] /src/components/Shared/react/AIChat/AIChat.css
+11:18:26 Configuration file updated. Restarting...
+11:18:26 [vite] connected.
+11:18:26 [vite] connected.
+11:18:26 [vite] server restarted.
+11:18:27 [200] / 60ms
+11:18:27 [200] / 4ms
+11:18:35 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:18:36 [vite] тЬи new dependencies optimized: react-markdown, remark-gfm
+11:18:36 [vite] тЬи optimized dependencies changed. reloading
+11:18:36 [200] / 16ms
+11:18:41 [watch] /src/components/Shared/react/AIChat/AIChat.css
+11:18:47 [watch] /src/components/Shared/react/AIChat/AIChat.css
