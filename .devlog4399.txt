@@ -30,3 +30,13 @@
 11:18:36 [200] / 16ms
 11:18:41 [watch] /src/components/Shared/react/AIChat/AIChat.css
 11:18:47 [watch] /src/components/Shared/react/AIChat/AIChat.css
+11:32:42 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:41:33 [vite] .env changed, restarting server...
+11:41:33 [vite] .env changed, restarting server...
+11:41:33 [vite] connected.
+11:41:34 [vite] connected.
+11:41:34 [vite] server restarted.
+11:41:34 [200] / 51ms
+11:41:34 [200] / 4ms
+11:41:37 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:44:26 [200] / 11ms
