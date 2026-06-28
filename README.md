@@ -1,50 +1,104 @@
-# Astro Starter Kit: Basics
+# BotSync
+
+> Фронтенд-платформа для создания умных AI чат-ботов на базе RAG (Retrieval Augmented Generation) — внедрение бота на сайт в виде виджета за 5 минут.
+
+**BotSync** — это веб-приложение для автоматизации поддержки и продаж с помощью искусственного интеллекта. Система помогает быстро создать простого чат-бота для внедрения на сайт в виде виджета или подключить полноценное управление через API на своей стороне. Платформа обучает RAG на различных данных: голосовые сообщения, JSON-данные, парсинг сайтов и загрузка документов.
+
+## Кому подойдёт
+
+Подходит всем видам бизнеса, которым необходимо создать умного чат-бота с детальным погружением в диалог: интернет-магазины, сервисные компании, отделы продаж и техподдержки.
+
+## Возможности
+
+- 🤖 **AI чат-боты** — текстовые ассистенты с подключением к базе знаний через RAG.
+- 🗣 **Голосовые ИИ-агенты** — входящие и исходящие звонки с мультиязычной поддержкой.
+- 💬 **Боты для мессенджеров** — Telegram, WhatsApp, Avito и другие каналы.
+- 📚 **Базы знаний (RAG)** — мгновенный поиск ответов в загруженных документах.
+- 🔌 **Интеграции** — подключение к CRM, телефонии и внешним API.
+- 📊 **Аналитика клиентов** — суммаризация диалогов и отчёты.
+
+## Технологический стек
+
+| Технология | Назначение |
+| :--------- | :--------- |
+| [Astro](https://astro.build) 7 | Основной фреймворк, SSR (`@astrojs/node`, standalone) |
+| [React](https://react.dev) 19 | Интерактивный виджет чата (`AIChat`) |
+| Content Collections | Контент страниц «Возможности» в Markdown |
+| `@astrojs/sitemap` | Автоматическая генерация карты сайта |
+| `marked` / `react-markdown` / `remark-gfm` | Рендеринг Markdown |
+
+## Быстрый старт
+
+Требуется **Node.js >= 22.12.0**.
 
 ```sh
-npm create astro@latest -- --template basics
+# Установка зависимостей
+npm install
+
+# Запуск dev-сервера на http://localhost:4321
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Команды
 
-## 🚀 Project Structure
+Все команды выполняются из корня проекта:
 
-Inside of your Astro project, you'll see the following folders and files:
+| Команда            | Действие                                              |
+| :----------------- | :---------------------------------------------------- |
+| `npm install`      | Установка зависимостей                                |
+| `npm run dev`      | Локальный dev-сервер на `localhost:4321`              |
+| `npm run build`    | Сборка production-версии в `./dist/`                  |
+| `npm run preview`  | Предпросмотр собранного сайта перед деплоем           |
+| `npm run astro ...`| Команды CLI, например `astro add`, `astro check`      |
+
+## Структура проекта
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/                # Статика: robots.txt, изображения, favicon
+├── seo/                   # SEO-документация и семантическое ядро
+├── src/
+│   ├── assets/            # Изображения и SVG
+│   ├── components/        # Компоненты (FSD-подход)
+│   │   ├── Layout/        # Header, Footer, Sidebar, Preloader и т.д.
+│   │   ├── Possibilities/ # Компоненты раздела «Возможности»
+│   │   └── Shared/        # Переиспользуемые блоки + React-виджет AIChat
+│   ├── content/           # Content Collections (Markdown)
+│   │   └── possibilities/ # Описания AI-решений
+│   ├── layouts/           # Layout.astro, ServiceLayout.astro
+│   ├── pages/             # Маршруты (страницы и динамические роуты)
+│   └── content.config.ts  # Схемы контент-коллекций (zod)
+├── astro.config.mjs       # Конфигурация Astro
+├── Dockerfile             # Сборка production-образа
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Сборка и деплой
 
-## 🧞 Commands
+Проект собирается в режиме SSR (Node standalone). Для контейнеризации используется `Dockerfile`:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+docker build -t botsync .
+docker run -p 4321:4321 botsync
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Сервер запускается командой `node ./dist/server/entry.mjs` на порту `4321`.
 
-## 👀 Want to learn more?
+## Документация
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Архитектура и компоненты](./docs/architecture.md)
+- [AI чат-виджет (AIChat)](./docs/ai-chat.md)
+- [Контент-коллекции](./docs/content-collections.md)
+- [Сборка и деплой](./docs/deployment.md)
+- [SEO](./seo/SEO_IMPLEMENTATION.md)
 
-# rag-ai-frontent
-Фронт часть, проекта по обучению AI Rag для автоматизации чат-ботов
+## Контакты
 
+- **Бренд**: BotSync · [botsync.ru](https://botsync.ru)
+- **Разработчик**: [W1DO DIGITAL](https://w1do.ru)
+- **Почта**: uniqdeveloper@yandex.ru
+- **Telegram**: [@W1DO_DIGITAL](https://t.me/W1DO_DIGITAL)
+
+## Лицензия
+
+См. файл [LICENSE](./LICENSE).
