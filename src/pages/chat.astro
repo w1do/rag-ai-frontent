@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AIChat from "@/components/Shared/AIChat.astro";
+
+const seoData = {
+    title: "Онлайн чат с ИИ-ассистентом — задайте вопрос нейросети",
+    description: "Поговорите с умным ИИ-ассистентом BotSync прямо в браузере. Задавайте вопросы — нейросеть на базе RAG отвечает мгновенно и по делу."
+};
+
+const chatSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BotSync ИИ-чат",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": seoData.description,
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "RUB"
+    }
+};
+---
+
+<Layout title={seoData.title} description={seoData.description} schema={chatSchema}>
+    <section class="ai-chat-intro">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title align-items-center">
+                        <span class="sub-title">Живое общение с нейросетью</span>
+                        <h2>Онлайн <span>чат с ИИ-ассистентом</span></h2>
+                        <p class="desc">
+                            Задайте любой вопрос — умный ИИ-агент BotSync на базе RAG ответит
+                            мгновенно. Попробуйте, как это работает, прямо сейчас.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <AIChat
+        title="BotSync ИИ-ассистент"
+        subtitle="Онлайн-помощник на базе нейросети"
+        greeting="Здравствуйте! Я — ИИ-ассистент BotSync. Задайте мне любой вопрос."
+    />
+</Layout>
+
+<style>
+    .ai-chat-intro {
+        padding: 100px 0 0;
+    }
+
+    @media (max-width: 575px) {
+        .ai-chat-intro {
+            padding: 64px 0 0;
+        }
+    }
+</style>
