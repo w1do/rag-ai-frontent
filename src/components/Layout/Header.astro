@@ -51,13 +51,12 @@ const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.o
                                                 <li><a href="/car-service-ai">ИИ для Автосервиса</a></li>
                                             </ul>
                                         </li>
-                                        <li class="nav-item menu-thumb">
+                                        <li class="nav-item">
                                             <a class="nav-link" href="/possibilities">Возможности<i class="fa-solid fa-angle-down"></i></a>
-                                            <ul class="has-homemenu">
+                                            <ul class="submenu">
                                                 {sortedPossibilities.map((possibility) => (
                                                     <li>
                                                         <a href={`/possibilities/${possibility.id}`}>
-                                                            <img src={possibility.data.image} alt={possibility.data.title}>
                                                             {possibility.data.title}
                                                         </a>
                                                     </li>

@@ -2,6 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import AIChat from "@/components/Shared/react/AIChat/AIChat.tsx";
 
+const idParam = Astro.url.searchParams.get("id");
+const chatId = idParam ? Number(idParam) : undefined;
+
+
 const seoData = {
     title: "Онлайн чат с ИИ-ассистентом — задайте вопрос нейросети",
     description: "Поговорите с умным ИИ-ассистентом BotSync прямо в браузере. Задавайте вопросы — нейросеть на базе RAG отвечает мгновенно и по делу."
@@ -41,7 +45,8 @@ const chatSchema = {
     </section>
 
     <AIChat
-        client:visible
+        client:load
+        chatId={chatId}
         title="BotSync ИИ-ассистент"
         subtitle="Онлайн-помощник на базе нейросети"
         greeting="Здравствуйте! Я — ИИ-ассистент BotSync. Задайте мне любой вопрос."

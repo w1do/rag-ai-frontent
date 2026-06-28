@@ -1,6 +1,6 @@
+import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import type { AIChatProps } from "./model/types";
 import { useChat } from "./hooks/useChat";
 import "./AIChat.css";
@@ -16,7 +16,19 @@ export default function AIChat({
     apiBase = import.meta.env.PUBLIC_API_BASE || "https://api.botsync.ru",
     chatId = Number(import.meta.env.PUBLIC_CHAT_ID) || 3,
 }: AIChatProps) {
-    const { messages, busy, info, actions, send } = useChat({ apiBase, chatId, greeting });
+    const [finalChatId, setFinalChatId] = useState(chatId);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+            if (id) {
+                setFinalChatId(Number(id));
+            }
+        }
+    }, [chatId]);
+
+    const { messages, busy, info, actions, send } = useChat({ apiBase, chatId: finalChatId, greeting });
 
     const [draft, setDraft] = useState("");
     const messagesRef = useRef<HTMLDivElement>(null);
@@ -101,7 +113,7 @@ export default function AIChat({
                                             </span>
                                             {m.role === "bot" && !m.isError ? (
                                                 <div className="ai-chat__bubble">
-                                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                    <ReactMarkdown>
                                                         {m.text}
                                                     </ReactMarkdown>
                                                 </div>
