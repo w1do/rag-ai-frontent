@@ -1,0 +1,296 @@
+Command finished with exit code 0.
+Command output:
+
+.ai-chat__title {
+.ai-chat__messages {
+.ai-chat__messages::-webkit-scrollbar { width: 6px; }
+.ai-chat__messages::-webkit-scrollbar-track { background: transparent; }
+.ai-chat__messages::-webkit-scrollbar-thumb {
+.ai-chat__messages::-webkit-scrollbar-thumb:hover {
+</style><script type="module" src="/@vite/client"></script><script type="module" src="/@id/astro/runtime/client/dev-too
+lbar/entrypoint.js"></script><script>window.__astro_dev_toolbar__ = {"root":"E:\\web\\vibe\\botSync\\","version":"7.0.3
+","debugInfo":"Astro                    v7.0.3\nNode                     v24.14.1\nSystem                   Windows (x6
+4)\nPackage Manager          npm\nOutput                   static\nAdapter                  @astrojs/node\nIntegrations
+             @astrojs/node\n                         @astrojs/sitemap\n                         @astrojs/react"}</scrip
+t><script type="module" src="/src/components/Layout/Header.astro?astro&type=style&index=0&lang.css"></script><script ty
+pe="module" src="/src/components/Shared/react/AIChat/AIChat.css"></script></head><!-- favicon icon --><link rel="shortc
+ut icon" href="/assets/images/favicon.png" type="image/x-icon"><link rel="icon" href="/assets/images/favicon.png" type=
+"image/x-icon"><!-- font awesome css --><link rel="stylesheet" href="/assets/css/all.min.css"><!-- bootstrap css --><li
+nk rel="stylesheet" href="/assets/css/bootstrap.min.css"><!-- swiper css --><link rel="stylesheet" href="/assets/css/sw
+iper-bundle.min.css"><!-- magnific css --><link rel="stylesheet" href="/assets/css/magnific-popup.min.css"><!-- animate
+ css --><link rel="stylesheet" href="/assets/css/animate.css"><!-- main css  --><link rel="stylesheet" href="/assets/cs
+s/main.css"><!-- style css --><link rel="stylesheet" href="/style.css"><body><div class="page-wrapper"><!-- preloader s
+tart --><div class="preloader"><div class="preloader-icon"><img src="/assets/images/loader.svg" alt="loader image"></di
+v><div class="preloader-text"><p>B</p><p>O</p><p>T</p><p>S</p><p>Y</p><p>N</p><p>K</p></div></div><!-- preloader end --
+><!-- back to top start --><button id="back-top" class="back-to-top" aria-label="back to top"><i class="fa-solid fa-che
+vron-up"></i></button><!-- back to top end --><!-- mouse cursor start --><div class="mouse-cursor cursor-outer"></div><
+div class="mouse-cursor cursor-inner"></div><!-- mouse cursor end --><!-- offcanvas sidebar start --><div class="offcan
+vas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvas-sidebar"><!-- offcanvas header start --><div class
+="offcanvas-header"><!-- offcanvas logo start --><div class="offcanvas-logo"><figure><img src="/assets/images/logo/logo
+.png" alt="botsync" width="50" height="50"></figure></div><!-- offcanvas logo emd --><!-- offcanvas close start --><but
+ton type="button" class="offcanvas-close bg-transparent" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-so
+lid fa-xmark"></i></button><!-- offcanvas close end --></div><!-- offcanvas header end --><!-- offcanvas body start -->
+<div class="offcanvas-body"><!-- menu outer start --><div class="mobile-menu"><!-- Here menu will come automatically vi
+a javascript / same menu as in header --></div><!-- menu outer end --><!-- offcanvas about start --><div class="offcanv
+as-about d-none d-xl-block"><p>BotSync — это передовая RAG-платформа, которая превр�
+�щает ваши данные в умных ИИ-ассистентов. Мы помогаем бизнесу авт�
+�матизировать коммуникации и создавать глубокие диалоговые сист
+емы на основе базы знаний компании.</p></div><!-- offcanvas about end --><!-- offcanvas co
+ntact start --><div class="offcanvas-contact"><!-- widget-contact start --><div class="widget widget-contact"><!-- widg
+et title start --><div class="widget-title"><h3>Контакты</h3></div><!-- widget title end --><!-- widget content
+ start --><div class="widget-content"><!-- offcanvas cta item start --><div class="offcanvas-cta-item"><!-- offcanvas c
+ta list start --><div class="offcanvas-cta-list"><div class="offcanvas-cta-icon"><i class="fa-solid fa-envelope"></i></
+div><div class="offcanvas-cta-content"><a href="mailto:uniqdeveloper@yandex.ru">uniqdeveloper@yandex.ru</a></div></div>
+<!-- offcanvas cta list end --><!-- offcanvas cta list start --><div class="offcanvas-cta-list"><div class="offcanvas-c
+ta-icon"><i class="fa-brands fa-telegram"></i></div><div class="offcanvas-cta-content"><a href="https://t.me/W1DO_DIGIT
+AL">@W1DO_DIGITAL</a></div></div><!-- offcanvas cta list end --></div><!-- offcanvas cta item end --></div><!-- widget 
+content end --></div><!-- widget-contact end --></div><!-- offcanvas contact end --><!-- offcanvas button wapper start 
+--><div class="offcanvas-button-wapper"><a href="/contact" class="theme-button style-1" aria-label="Начать бес
+платно"><span data-text="Начать бесплатно">Начать бесплатно</span><i class="fa-soli
+d fa-arrow-right"></i></a></div><!-- offcanvas button wapper end --><!-- offcanvas social start --><div class="offcanva
+s-social"><!-- widget social media start --><div class="widget widget-social-media"><!-- widget content start --><div c
+lass="widget-content"><ul class="social-icon"><li><a href="https://t.me/W1DO_DIGITAL" aria-label="telegram"><i class="f
+a-brands fa-telegram"></i></a></li></ul></div><!-- widget content end --></div><!-- widget social media end --></div><!
+-- offcanvas-social end --></div><!-- offcanvas body end --></div><!-- offcanvas sidebar end --><!-- header start --><h
+eader class="header header-3" data-astro-cid-flfx4z52><!-- header lower start --><div class="header-lower" data-astro-c
+id-flfx4z52><div class="container-fluid" data-astro-cid-flfx4z52><div class="row align-items-center justify-content-bet
+ween g-0" data-astro-cid-flfx4z52><div class="col-12" data-astro-cid-flfx4z52><!-- header content start --><div class="
+header-content d-flex align-items-center" data-astro-cid-flfx4z52><!-- header left start --><div class="header-left" da
+ta-astro-cid-flfx4z52><!-- logo box start --><div class="logo-box" data-astro-cid-flfx4z52><div class="logo" data-astro
+-cid-flfx4z52><a href="/" data-astro-cid-flfx4z52><figure data-astro-cid-flfx4z52><img src="/assets/images/logo/logo.pn
+g" alt="botsync" width="50" height="50" data-astro-cid-flfx4z52></figure></a></div></div><!-- logo box end  --></div><!
+-- header right end --><!-- header navigation start --><div class="header-navigation d-flex align-items-center m-auto" 
+data-astro-cid-flfx4z52><!-- main menu --><div class="main-menu" data-astro-cid-flfx4z52><nav id="mobile-menu" data-ast
+ro-cid-flfx4z52><ul data-astro-cid-flfx4z52><li class="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/" d
+ata-astro-cid-flfx4z52>Главная</a></li><li class="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/"
+ data-astro-cid-flfx4z52>База знаний<i class="fa-solid fa-angle-down" data-astro-cid-flfx4z52></i></a><ul cla
+ss="submenu" data-astro-cid-flfx4z52><li data-astro-cid-flfx4z52><a href="/chatbot-ai" data-astro-cid-flfx4z52>ИИ Ч�
+�т-бот</a></li><li data-astro-cid-flfx4z52><a href="/automated-answers-rag" data-astro-cid-flfx4z52>RAG Автоо�
+�веты</a></li><li data-astro-cid-flfx4z52><a href="/chatbot-integration" data-astro-cid-flfx4z52>Внедрение
+ на сайт</a></li><li data-astro-cid-flfx4z52><a href="/knowledge-base-rag" data-astro-cid-flfx4z52>База зн�
+�ний RAG</a></li><li data-astro-cid-flfx4z52><a href="/rag-systems" data-astro-cid-flfx4z52>RAG Системы</a></
+li><li data-astro-cid-flfx4z52><a href="/avito-ai-agent" data-astro-cid-flfx4z52>ИИ Агент для Авито</a><
+/li><li data-astro-cid-flfx4z52><a href="/car-service-ai" data-astro-cid-flfx4z52>ИИ для Автосервиса</a
+></li></ul></li><li class="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/possibilities" data-astro-cid-f
+lfx4z52>Возможности<i class="fa-solid fa-angle-down" data-astro-cid-flfx4z52></i></a><ul class="submenu" dat
+a-astro-cid-flfx4z52><li data-astro-cid-flfx4z52><a href="/possibilities/custom-ai-chatbots" data-astro-cid-flfx4z52>Ч
+ат боты</a></li><li data-astro-cid-flfx4z52><a href="/possibilities/ai-voice-agents" data-astro-cid-flfx4z52>Го
+лосовые ИИ агенты</a></li><li data-astro-cid-flfx4z52><a href="/possibilities/workflow-automation" data-
+astro-cid-flfx4z52>Автоматизированные ИИ Агенты</a></li><li data-astro-cid-flfx4z52><a href="
+/possibilities/messaging-bots" data-astro-cid-flfx4z52>Боты для сообщений</a></li><li data-astro-cid-fl
+fx4z52><a href="/possibilities/knowledge-agents" data-astro-cid-flfx4z52>База знаний RAG для ИИ аген
+та</a></li><li data-astro-cid-flfx4z52><a href="/possibilities/customer-analytics" data-astro-cid-flfx4z52>Анали
+тика с помощью ИИ</a></li><li data-astro-cid-flfx4z52><a href="/possibilities/custom-integrations" data-a
+stro-cid-flfx4z52>Интеграции с чат ботами</a></li><li data-astro-cid-flfx4z52><a href="/possibiliti
+es/industry-solutions" data-astro-cid-flfx4z52>Отраслевые ИИ боты</a></li></ul></li><li class="nav-item
+" data-astro-cid-flfx4z52><a class="nav-link" href="/bots" data-astro-cid-flfx4z52>Примеры ботов<i class="f
+a-solid fa-angle-down" data-astro-cid-flfx4z52></i></a><ul class="submenu" data-astro-cid-flfx4z52><li data-astro-cid-f
+lfx4z52><a href="/bots/lovlia-karasia" data-astro-cid-flfx4z52>Ловля Карася</a></li><li data-astro-cid-flfx4
+z52><a href="/bots/botsync" data-astro-cid-flfx4z52>BotSync</a></li><li data-astro-cid-flfx4z52><a href="/bots/nailgal"
+ data-astro-cid-flfx4z52>NailGal</a></li><li data-astro-cid-flfx4z52><a href="/bots/gaztocka" data-astro-cid-flfx4z52>�
+�азТочка</a></li><li class="menu-view-all" data-astro-cid-flfx4z52><a href="/bots" data-astro-cid-flfx4z52>См�
+�треть всех ботов <i class="fa-solid fa-arrow-right" data-astro-cid-flfx4z52></i></a></li></ul></li><li c
+lass="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/pricing" data-astro-cid-flfx4z52>Тарифы</a></l
+i><li class="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/faq" data-astro-cid-flfx4z52>FAQ</a></li><li 
+class="nav-item" data-astro-cid-flfx4z52><a class="nav-link" href="/contact" data-astro-cid-flfx4z52>Контакты</
+a></li></ul></nav></div></div><!-- header navigation end --><!-- header right start --><div class="header-right d-flex 
+align-items-center gap-3" data-astro-cid-flfx4z52><!-- header button --><div class="header-button" data-astro-cid-flfx4
+z52><a href="/contact" class="theme-button style-1" aria-label="Начать бесплатно" data-astro-cid-flfx4z5
+2><span data-text="Начать бесплатно" data-astro-cid-flfx4z52>Начать бесплатно</span><i cl
+ass="fa-solid fa-arrow-right" data-astro-cid-flfx4z52></i></a></div><!-- button wapper --><div class="button-wapper" da
+ta-astro-cid-flfx4z52><!-- header-search --><div class="header-search" data-astro-cid-flfx4z52><a href="" class="search
+-btn" aria-label="search" data-astro-cid-flfx4z52><i class="fa-solid fa-magnifying-glass" data-astro-cid-flfx4z52></i><
+/a></div><!-- header sidebar  --><div class="header-sidebar" data-astro-cid-flfx4z52><a class="sidebar-toggler" data-bs
+-toggle="offcanvas" href="#offcanvas-sidebar" aria-label="sidebar toggler" role="button" aria-controls="offcanvas-sideb
+ar" data-astro-cid-flfx4z52><span data-astro-cid-flfx4z52></span><span data-astro-cid-flfx4z52></span></a></div></div><
+/div><!-- header right end --></div><!-- header content end --></div></div></div></div><!-- header lower end --><!-- se
+arch box start --><div id="search-box" data-astro-cid-flfx4z52><span class="close" data-astro-cid-flfx4z52><i class="fa
+-solid fa-xmark" data-astro-cid-flfx4z52></i></span><div class="search-wapper" data-astro-cid-flfx4z52><form action="#"
+ class="search-form" id="search-form" data-astro-cid-flfx4z52><div class="input-group" data-astro-cid-flfx4z52><input t
+ype="text" id="searchs" name="search" placeholder="Поиск по сайту..." autocomplete="off" required="required
+" data-astro-cid-flfx4z52></div><button type="submit" class="search-submit-btn" data-text="search submit" data-astro-ci
+d-flfx4z52><i class="fa-solid fa-magnifying-glass" data-astro-cid-flfx4z52></i></button></form></div></div><!-- search 
+box end --></header><!-- header end--><main class="main"><!-- breadcrumb section start --><section class="breadcrumb-se
+ction pt-100 md-pt-80 pb-100 md-pb-80" data-img-src="/assets/images/breadcrumb/breadcrumb-shape-line.png"><div class="c
+ontainer"><div class="row"><div class="col-lg-12"><!-- breadcrumb content start --><div class="breadcrumb-content"><!--
+ breadcrumb title start --><div class="breadcrumb-title wow fadeInUp" data-wow-delay=".2s"><h1>Умный чат бот
+ BotSync</h1></div><!-- breadcrumb title end --><!-- nav start --><nav aria-label="breadcrumb" class="wow fadeInUp" dat
+a-wow-delay=".3s"><ol class="breadcrumb"><li class="breadcrumb-item "><a href="/">Главная</a></li><li class="bre
+adcrumb-item "><a href="/bots">Каталог ботов</a></li><li class="breadcrumb-item active" aria-current="page"
+>BotSync</li></ol></nav><!-- nav end --></div><!-- breadcrumb content end --></div></div></div><div class="breadcrumb-s
+hape"><img class="breadcrumb-shape-one" src="/assets/images/breadcrumb/breadcrumb-shape-1.png" alt="breadcrumb shape on
+e"><img class="breadcrumb-shape-two" src="/assets/images/breadcrumb/breadcrumb-shape-2.png" alt="breadcrumb shape two">
+<img class="breadcrumb-shado-top" src="/assets/images/breadcrumb/breadcrumb-shado-top.png" alt="breadcrumb shape top"><
+img class="breadcrumb-shado-bottom" src="/assets/images/breadcrumb/breadcrumb-shado-bottom.png" alt="breadcrumb shape b
+ottom"></div></section><!-- breadcrumb section end --><section class="bot-intro pt-100 md-pt-80 pb-50 md-pb-40"><div cl
+ass="container"><div class="row justify-content-center"><div class="col-lg-9 text-center"><div class="section-title ali
+gn-items-center"><span class="sub-title">Живое общение с нейросетью</span><h2>Умный чат 
+бот <span>BotSync</span> онлайн</h2><p class="desc">BotSync — это ИИ чат бот на базе ней
+росети и технологии RAG. Система внедрения AI чат-ботов с применени�
+�м обучения RAG. Задайте вопрос и пообщайтесь с искусственным инте�
+�лектом прямо в браузере — быстрые ответы 24/7, бесплатно и без рег�
+�страции.</p></div></div></div></div></section><style>astro-island,astro-slot,astro-static-slot{display:contents
+}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(ne
+w Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(d,s,h)=>s in d?g(d,s,{enumerable:
+!0,configurable:!0,writable:!0,value:h}):d[s]=h;var l=(d,s,h)=>w(d,typeof s!="symbol"?s+"":s,h);var E=new Set(["__proto
+__","constructor","prototype"]);{let d={0:t=>y(t),1:t=>h(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(h(t)),5:t=
+>new Set(h(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),1
+1:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in d?d[p](e):void 0},h=t=>t.map(s),y=t=>typeof t!="object"||
+t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super
+(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConne
+cted)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hy
+drate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[
+data-astro-template]");for(let o of i){let c=o.closest(this.tagName);c!=null&&c.isSameNode(this)&&(r[o.getAttribute("da
+ta-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let c=o.closest(this.tagName);c!=null&&c.isSame
+Node(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let m;try{m=this.hasAttribute("props")?y(JSON.parse(this
+.getAttribute("props"))):{}}catch(o){let c=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("compone
+nt-export");throw v&&(c+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${c}`,this.getAtt
+ribute("props"),o),o}let a,u=this.hydrator(this);a=performance.now(),await u(this.Component,m,r,{client:this.getAttribu
+te("client")}),a&&this.setAttribute("client-render-time",(performance.now()-a).toString()),this.removeAttribute("ssr"),
+this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new C
+ustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),doc
+ument.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-chil
+dren")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let
+ e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new Mutat
+ionObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="as
+tro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e
+)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}ge
+tRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.h
+ash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(
+r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url
+"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});th
+is.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttr
+ibute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(
+),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:m}]=await P
+romise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default
+:()=>()=>{}})]),a=this.getAttribute("component-export")||"default";if(a.includes(".")){this.Component=i;for(let u of a.
+split(".")){if(E.has(u)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.h
+asOwn(this.Component,u))throw new Error(`Invalid component export path: ${a}`);this.Component=this.Component[u]}}else{i
+f(E.has(a))throw new Error(`Invalid component export path: ${a}`);this.Component=i[a]}return this.hydrator=m,this.hydra
+te}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChange
+dCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.defi
+ne("astro-island",f)}})();</script><astro-island uid="Z17yAwm" prefix="r1" component-url="/src/components/Shared/react/
+AIChat/AIChat.tsx" component-export="default" renderer-url="/node_modules/@astrojs/react/dist/client.js" props="{&quot;
+chatId&quot;:[0,3],&quot;title&quot;:[0,&quot;BotSync — ИИ-ассистент&quot;],&quot;subtitle&quot;:[0,&quot;
+Система внедрения AI чат-ботов с применением обучения RAG&quot;],&quot;gree
+ting&quot;:[0,&quot;Привет! нужен чат для бизнеса ? давай поболтаем.&quot;]}" ssr
+ client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;AIChat&quot;
+,&quot;value&quot;:true}" server-render-time="1.2255000000004657" await-children><section class="ai-chat-section"><div 
+class="container"><div class="row justify-content-center"><div class="col-lg-9 col-xl-8"><div class="ai-chat"><div clas
+s="ai-chat__header"><div class="ai-chat__avatar" aria-hidden="true"><i class="fa-solid fa-robot"></i><span class="ai-ch
+at__status-dot"></span></div><div class="ai-chat__heading"><h3 class="ai-chat__title">BotSync — ИИ-ассистен
+т</h3><p class="ai-chat__subtitle">Система внедрения AI чат-ботов с применением о
+бучения RAG</p></div><span class="ai-chat__online"><span class="ai-chat__online-dot"></span> Онлайн</span>
+</div><div class="ai-chat__messages" role="log" aria-live="polite" aria-label="История сообщений чат
+а"><div class="ai-chat__row ai-chat__row--bot"><div class="ai-chat__content"><span class="ai-chat__name">Ассист�
+�нт</span><div class="ai-chat__bubble"><p>Привет! нужен чат для бизнеса ? давай побо
+лтаем.</p></div></div></div></div><form class="ai-chat__form" autoComplete="off"><div class="ai-chat__input-wrap">
+<textarea class="ai-chat__input" name="question" rows="1" placeholder="Напишите сообщение..." aria-lab
+el="Текст сообщения"></textarea><button type="submit" class="ai-chat__send" aria-label="Отправит�
+� сообщение" disabled=""><i class="fa-solid fa-paper-plane"></i></button></div><p class="ai-chat__hint">Наж
+мите <kbd>Enter</kbd> для отправки, <kbd>Shift</kbd>+<kbd>Enter</kbd> — новая строка</p></f
+orm></div></div></div></div></section><!--astro:end--></astro-island><!-- about section start --><section class="about-
+section-2 pt-100 md-pt-80 pb-100 md-pb-80"><div class="container"><div class="row"><div class="col-lg-6"><!-- about lef
+t start --><div class="about-left wow fadeInUp" data-wow-delay=".2s"><!-- section title start --><div class="section-ti
+tle"><span class="sub-title">Живое общение с нейросетью</span><h2>Умный чат бот <span
+>BotSync</span></h2><p>Хотите поговорить с искусственным интеллектом? Чат �
+�от BotSync — это умный онлайн-собеседник на базе нейросети. Он поним
+ает естественный язык, ведёт диалог и мгновенно отвечает на вопр�
+�сы по теме «Система внедрения AI чат-ботов с применением обучения
+ RAG». Никакой регистрации и установки приложений: общение с ботом 
+доступно прямо на сайте.</p><p>В отличие от обычных скриптовых бото�
+�, BotSync построен на технологии RAG (Retrieval-Augmented Generation). Это значит, что
+ нейросеть отвечает не «из головы», а опирается на проверенную ба
+зу знаний — поэтому ответы ИИ чат бота точные и по делу.</p></div><!-- sec
+tion title end --><div class="about-features-wappper"><div class="about-features-item"><div class="about-features-icon"
+><figure><img src="/assets/images/about/icon-2-1-1.png" alt="Чат бот онлайн 24/7"></figure></div><div class
+="about-features-title"><h3>Чат бот онлайн 24/7</h3><p>ИИ-ассистент BotSync на связи кр
+углосуточно. Переписка с ботом идёт в режиме реального времени —
+ задайте вопрос нейросети и получите ответ за секунды.</p></div></div><div
+ class="about-features-item"><div class="about-features-icon"><figure><img src="/assets/images/about/icon-2-2-1.png" al
+t="Умные ответы на базе RAG"></figure></div><div class="about-features-title"><h3>Умные отве�
+�ы на базе RAG</h3><p>Нейросеть чат бот обучена на данных бренда BotSync. Б
+от отвечает на вопросы, опираясь на актуальную базу знаний, а не н
+а обобщённые данные из интернета.</p></div></div><div class="about-features-item"><div clas
+s="about-features-icon"><figure><img src="/assets/images/about/icon-2-1-1.png" alt="Живое общение с ней
+росетью"></figure></div><div class="about-features-title"><h3>Живое общение с нейросетью<
+/h3><p>BotSync общается как человек: понимает контекст переписки, уточн
+яет детали и помогает решить ваш вопрос. Это удобный виртуальный 
+собеседник для бизнеса и клиентов.</p></div></div><div class="about-features-item"><div cl
+ass="about-features-icon"><figure><img src="/assets/images/about/icon-2-2-1.png" alt="Бесплатно и без ре
+гистрации"></figure></div><div class="about-features-title"><h3>Бесплатно и без регистра�
+�ии</h3><p>Пообщаться с ИИ можно бесплатно и без регистрации. Просто 
+начните чат с ботом BotSync — никаких СМС и анкет не требуется.</p></div><
+/div></div><div class="about-footer"><div class="about-contact-box"><div class="icon-box"><i class="fa-solid fa-phone">
+</i></div><div class="about-contact-box-content"><p>Связаться с BotSync</p><a href="tel:+79088712026">+790887
+12026</a></div></div></div></div><!-- about left end --></div><div class="col-lg-6"><!-- about right start --><div clas
+s="about-right wow fadeInUp" data-wow-delay=".3s"><div class="about-content-box"><div class="about-content-item mb-30">
+<p class="about-text">Как пообщаться с ботом</p><p class="desc">Напишите сообщение 
+в поле чата или выберите готовый вопрос — умный ИИ-ассистент BotSync
+ обработает запрос с помощью нейросети и даст развёрнутый ответ �
+�нлайн.</p></div><div class="about-content-item "><p class="about-text">Свой бот для бизнеса</p><
+p class="desc">BotSync создаёт ИИ чат-ботов с базой знаний (RAG), обучает нейр�
+�сеть на ваших документах и внедряет ассистента на сайт — автома�
+�изация поддержки и продаж с помощью искусственного интеллекта.</
+p></div></div><!-- about image start --><div class="about-image-2"><figure class="image-anime"><img src="/assets/images
+/about/about-2-1-1.jpg" alt="Умный чат бот"></figure></div><!-- about image end --></div><!-- about right en
+d --></div></div></div></section><!-- about section end --><!-- cta section start --><section class="cta-section-1 pb-1
+00 md-pb-80"><div class="container"><div class="row"><div class="col-12"><!-- cta content start --><div class="cta-cont
+ent left-before right-after" data-img-src="assets/images/cta/bg-patten.png"><div class="section-title wow fadeInUp" dat
+a-wow-delay=".2s"><h2>Нужен ии бот <span>который понимает клиента?</span></h2><p>Поп
+робуйте нашу систему, которая поможет закрыть многие вопросы на �
+�равильно обученных данных</p></div><div class="cta-button wow fadeInUp" data-wow-delay=".3s"><a
+ href="/contact" class="theme-button style-1" aria-label="Request a demo"><span data-text="Request a demo">Написа
+ть</span><i class="fa-solid fa-arrow-right"></i></a></div></div><!-- cta content end --></div></div></div></section><
+!-- cta section end --></main><!-- footer start --><footer class="footer footer-3"><!-- bakground assets start --><div 
+class="bakground-assets"><img class="shado-top" src="/assets/images/footer/shado-top.png" alt="footer shado top"></div>
+<!-- bakground assets end --><!-- footer bottom start --><div class="footer-bottom"><div class="container"><!-- footer 
+widget wrap start --><div class="footer-widget-wrap"><div class="row justify-content-between"><div class="col-xl-3 col-
+lg-12"><!-- footer widget start --><div class="footer-widget footer-widget-about wow fadeInUp" data-wow-delay=".2s"><di
+v class="footer-logo mb-20"><a href="/"><figure><img src="/assets/images/logo/logo.png" alt="footer logo" width="50" he
+ight="50"></figure></a></div><div class="info"><a class="email text-decoration-underline" href="mailto:uniqdeveloper@ya
+ndex.ru">uniqdeveloper@yandex.ru</a><a class="call" href="https://t.me/W1DO_DIGITAL">Telegram: W1DO_DIGITAL</a></div><!
+-- footer social icon start --><div class="footer-social-icon"><ul class="social-icon"><li><a href="https://t.me/W1DO_D
+IGITAL" aria-label="telegram"><i class="fa-brands fa-telegram"></i></a></li></ul></div><!-- footer social icon end --><
+/div><!-- footer widget end --></div><div class="col-xl-8 col-lg-12"><div class="row"><div class="col-lg-12"><div class
+="row"><div class="col-lg-3 col-sm-6"><!-- footer widget start --><div class="footer-widget footer-widget-quick-links w
+ow fadeInUp" data-wow-delay=".3s"><h3 class="footer-widget-title line-anime">Ссылки</h3><!-- widget link start --
+><div class="widget-link"><ul class="link"><li><a href="/"><i class="fa-solid fa-chevron-right"></i> Главная</a>
+</li><li><a href="/chatbot-ai"><i class="fa-solid fa-chevron-right"></i> ИИ Чат-бот</a></li><li><a href="/autom
+ated-answers-rag"><i class="fa-solid fa-chevron-right"></i> RAG Автоответы</a></li><li><a href="/chatbot-inte
+gration"><i class="fa-solid fa-chevron-right"></i> Внедрение на сайт</a></li><li><a href="/possibilities
+"><i class="fa-solid fa-chevron-right"></i> Возможности</a></li><li><a href="/knowledge-base-rag"><i class="
+fa-solid fa-chevron-right"></i> База знаний RAG</a></li><li><a href="/rag-systems"><i class="fa-solid fa-chev
+ron-right"></i> RAG Системы</a></li><li><a href="/avito-ai-agent"><i class="fa-solid fa-chevron-right"></i> ИИ
+ Агент для Авито</a></li><li><a href="/car-service-ai"><i class="fa-solid fa-chevron-right"></i> ИИ дл
+я Автосервиса</a></li><li><a href="/pricing"><i class="fa-solid fa-chevron-right"></i> Тарифы</a></li
+><li><a href="/faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li><li><a href="/contact"><i class="fa-solid fa-
+chevron-right"></i> Контакты</a></li></ul></div><!-- widget link end --></div><!-- footer widget end --></div><
+div class="col-lg-3 col-sm-6"><!-- footer widget start --><div class="footer-widget footer-widget-services wow fadeInUp
+" data-wow-delay=".4s"><h3 class="footer-widget-title line-anime">Поддержка</h3><!-- widget link start --><div
+ class="widget-link"><ul class="link"><li><a href="/faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li><li><a h
+ref="/contact"><i class="fa-solid fa-chevron-right"></i>Написать нам</a></li></ul></div><!-- widget link end
+ --></div><!-- footer widget end --></div><div class="col-lg-6 col-sm-12"><!-- footer widget start --><div class="foote
+r-widget footer-widget-subscribe wow fadeInUp" data-wow-delay=".5s"><h4 class="footer-widget-title line-anime">Расс
+ылка</h4><div class="widget-contact"><p class="text-white">Подпишитесь на новости и спецп
+редложения BotSync.</p><!-- subscribe form start --><form action="#" class="subscribe-form" id="subscribe-for
+m"><div class="input-group"><input type="text" id="emailid" name="emailid" placeholder="Ваш email" autocomplete="off
+" required="required"></div><button type="submit" class="submit-btn" data-text="подписаться" aria-label="sub
+scribe"> <i class="fa-solid fa-paper-plane"></i> </button></form><!-- subscribe form end --></div></div><!-- footer wid
+get end --></div></div></div></div></div></div></div><!-- footer widget wrap end --></div></div><!-- footer bottom end 
+--><!-- footer top start --><div class="footer-copyright"><div class="container"><div class="footer-copyright-wrap"><di
+v class="row align-items-center"><div class="col-lg-6"><!-- footer copyright start --><div class="copyright-text wow fa
+deInUp" data-wow-delay=".2s"><p class="m-0">&#169; Copyright 2026 BotSync Все права защищены. Разр�
+�ботка <a href="https://t.me/W1DO_DIGITAL" class="text-decoration-underline">W1DO DIGITAL</a></p></div><!-- footer
+ copyright end --></div><div class="col-lg-6 text-lg-end"><!-- footer bottom nav start --><ul class="footer-bottom-nav 
+wow fadeInUp" data-wow-delay=".3s"><li><a class="line-effect" href="/terms">Условия использования</
+a></li><li><a class="line-effect" href="/privacy">Политика конфиденциальности</a></li></ul><!
+-- footer bottom nav end --></div></div></div></div></div><!-- footer copyright end --></footer><!-- footer end --></di
+v><!-- jQuery --><script src="/assets/js/jquery-3.7.1.min.js"></script><!-- bootstrap js --><script src="/assets/js/boo
+tstrap.bundle.min.js"></script><!-- jquery meanmenu js --><script src="/assets/js/jquery.meanmenu.min.js"></script><!--
+ swiper js --><script src="/assets/js/swiper-bundle.min.js"></script><!-- wow Js --><script src="/assets/js/wow.min.js"
+></script><!-- validate js --><script src="/assets/js/validate.min.js"></script><!-- ajax form Js --><script src="/asse
+ts/js/ajax-form.js"></script><!-- SmoothScroll Js --><script src="/assets/js/SmoothScroll.js"></script><!-- appear Js -
+-><script src="/assets/js/jquery.appear.js"></script><!-- magnific Js --><script src="/assets/js/jquery.magnific-popup.
+min.js"></script><!-- syotimer Js --><script src="/assets/js/jquery.syotimer.min.js"></script><!-- main Js --><script s
+rc="/assets/js/main.js"></script><!-- Yandex.Metrika counter --><script type="text/javascript">

@@ -24,7 +24,7 @@ interface Bot {
 // Получаем данные конкретного бота по slug через поиск ассистентов.
 async function fetchBotBySlug(slug: string): Promise<Bot | null> {
     try {
-        const url = `${API_BASE}/api/v1/assistants/search?filter%5Bslug%5D=${encodeURIComponent(slug)}`;
+        const url = `${API_BASE}/v1/assistants/search?filter%5Bslug%5D=${encodeURIComponent(slug)}`;
         const res = await fetch(url, { headers: { accept: "application/json" } });
         if (!res.ok) return null;
         const json = await res.json();
@@ -37,9 +37,12 @@ async function fetchBotBySlug(slug: string): Promise<Bot | null> {
 }
 
 export async function getStaticPaths() {
+    // ВАЖНО: getStaticPaths выполняется в изолированном контексте и не видит
+    // переменные верхнего уровня (например, API_BASE), поэтому база задаётся локально.
+    const apiBase = "https://botsync.ru/api";
     let chats: Bot[] = [];
     try {
-        const res = await fetch(`${API_BASE}/chats`, {
+        const res = await fetch(`${apiBase}/chats`, {
             headers: { accept: "application/json" }
         });
         if (res.ok) {
