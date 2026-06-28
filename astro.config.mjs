@@ -16,4 +16,12 @@ export default defineConfig({
         mode: 'standalone',
     }),
     integrations: [sitemap(), react()],
+    vite: {
+        resolve: {
+            dedupe: ['react', 'react-dom'],
+        },
+        optimizeDeps: {
+            include: ['react', 'react-dom', 'react/jsx-runtime', 'react-markdown'],
+        },
+    },
 });
