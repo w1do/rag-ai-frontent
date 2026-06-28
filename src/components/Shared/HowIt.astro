@@ -1,0 +1,106 @@
+---
+interface StepItem {
+    image: string;
+    title: string;
+    desc: string;
+    num: string;
+}
+
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    desc?: string;
+    steps?: StepItem[];
+    footerText?: string;
+    footerLinkText?: string;
+    footerLink?: string;
+}
+
+const {
+    subTitle = "Как это работает",
+    titlePre = "Создайте своего ",
+    titleAccent = "ИИ-бота",
+    titlePost = " за 3 шага",
+    desc = "Мы максимально упростили процесс обучения ИИ. Вам не нужно быть программистом, чтобы внедрить современные технологии в свой бизнес.",
+    steps = [
+        {
+            image: "assets/images/how-it-work/icon-3-1.png",
+            title: "Загрузите данные",
+            desc: "Добавьте PDF-файлы, ссылки на сайт или текстовые документы. Наш ИИ проанализирует их за секунды.",
+            num: "01"
+        },
+        {
+            image: "assets/images/how-it-work/icon-3-2.png",
+            title: "Настройте поведение",
+            desc: "Выберите роль бота, его тон общения и задайте инструкции по обработке запросов клиентов.",
+            num: "02"
+        },
+        {
+            image: "assets/images/how-it-work/icon-3-3.png",
+            title: "Внедрите на сайт",
+            desc: "Скопируйте готовый код виджета или используйте API для интеграции бота в ваш продукт.",
+            num: "03"
+        }
+    ],
+    footerText = "Мы помогаем бизнесу проектировать, создавать и внедрять интеллектуальные решения.",
+    footerLinkText = "Начать сейчас",
+    footerLink = "#contact"
+} = Astro.props;
+---
+<!-- how works section start -->
+<section class="how-it-work-section pt-100 md-pt-80 pb-100 md-pb-80">
+    <!-- bakground assets start -->
+    <div class="bakground-assets">
+        <img class="shape-left" src="assets/images/how-it-work/how-it-work-shape.png" alt="shape one">
+        <img class="shape-right" src="assets/images/how-it-work/how-it-work-shape.png" alt="shape two">
+    </div>
+    <!-- bakground assets end -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- section title start -->
+                <div class="section-title text-center wow fadeInUp" data-wow-delay=".2s">
+                    <span class="sub-title">{subTitle}</span>
+                    <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                    <p>{desc}</p>
+                </div>
+                <!-- section title end -->
+            </div>
+        </div>
+        <div class="row">
+            {steps.map((step, index) => (
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <!-- how it work item start -->
+                    <div class={`how-it-work-item ${index !== 1 ? 'mt-lg-5' : ''} wow fadeInUp`} data-wow-delay={`${0.3 + index * 0.1}s`}>
+                        <div class="how-it-work-data right-after">
+                            <div class="how-it-work-icon">
+                                <div class="icon">
+                                    <figure>
+                                        <img src={step.image} alt={step.title}>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="how-it-work-content">
+                                <h2>{step.title}</h2>
+                                <p>{step.desc}</p>
+                            </div>
+                        </div>
+                        <div class="how-it-work-num">{step.num}</div>
+                    </div>
+                </div>
+            ))}
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- how it work footer start -->
+                <div class="how-it-work-footer text-center wow fadeInUp" data-wow-delay=".6s" >
+                    <p>{footerText} <a href={footerLink}>{footerLinkText}</a></p>
+                </div>
+                <!-- how it work footer end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- how works section end -->

@@ -1,0 +1,92 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+
+const possibilities = await getCollection('possibilities');
+const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.order);
+
+const seoData = {
+    title: "Создания умных ИИ-ботов c базой знаний для бизнеса",
+    description: "Возможности BotSync: умные чат-боты на нейросети, RAG база знаний, обучение на документах и сайтах, голосовые ИИ-ассистенты, интеграция виджета на сайт и через API."
+};
+---
+<Layout title={seoData.title} description={seoData.description}>
+
+<Breadcrumb title="Возможности BotSync" items={[
+    { name: "Главная", url: "/" },
+    { name: "Возможности" }
+]} />
+
+<!-- possibilities section start -->
+<section class="services-section pt-100 md-pt-80 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            {sortedPossibilities.map((possibility, index) => (
+                <div class={index < 3 || index >= 5 ? "col-lg-4" : "col-lg-6"}>
+                    <!-- services item start -->
+                    <div class="services-item right-after wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`}>
+                        <div class="services-content">
+                            <h2><a href={`/possibilities/${possibility.id}`}>{possibility.data.title.split(' ').slice(0, 2).join(' ')} <br> {possibility.data.title.split(' ').slice(2).join(' ')}</a></h2>
+                            <div class={index < 3 || index >= 5 ? "check-list" : "check-list-two-col"}>
+                                <ul>
+                                    {possibility.data.features?.map(feature => (
+                                        <li>{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-image">
+                            <figure>
+                                <img src={possibility.data.image} alt={possibility.data.title}>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- services item end -->
+                </div>
+            ))}
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- pagination start -->
+                <div class="pagination justify-content-center wow fadeInUp" data-wow-delay=".8s">
+                    <nav aria-label="page navigation">
+                        <ul class="page-list">
+                            <li><a aria-current="page" class="page-numbers current" href="#">1</a></li>
+                            <li><a class="page-numbers" href="#">2</a></li>
+                            <li><a class="next page-numbers" href="#">Next Page</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- pagination end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- services section end -->
+
+<!-- cta section start -->
+<section class="cta-section-1 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- cta content start -->
+                <div class="cta-content left-before right-after" data-img-src="/assets/images/cta/bg-patten.png">
+                    <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                        <h2>Join Millon Companies who Already <span>Trust With Us</span></h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptates modi omnis dolore et mollitia dolorem alias voluptatibus tempora soluta ut officia ullam magnam obcaecati accusantium.</p>
+                    </div>
+                    <div class="cta-button wow fadeInUp" data-wow-delay=".3s">
+                        <a href="contact.html" class="theme-button style-1" aria-label="Request a demo">
+                            <span data-text="Request a demo">Request a demo</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- cta content end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cta section end -->
+</Layout>

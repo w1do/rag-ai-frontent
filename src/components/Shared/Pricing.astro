@@ -1,0 +1,221 @@
+---
+interface PricingPlan {
+    icon: string;
+    price: string;
+    tag: string;
+    features: string[];
+    btnText: string;
+    btnLink: string;
+}
+
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    monthlyPlans?: PricingPlan[];
+    yearlyPlans?: PricingPlan[];
+}
+
+const commonFeatures = [
+    "Обращение к API",
+    "Обучение голосом",
+    "Обучение на конкурентах",
+    "Обучение на документах",
+    "Обучение JSON",
+    "Подключение мессенджеров (max, telegram, vk, vc)",
+    "Автопубликации по базе знаний"
+];
+
+const {
+    subTitle = "Тарифные планы",
+    titlePre = "Подключить ИИ ",
+    titleAccent = "к",
+    titlePost = " бизнесу",
+    monthlyPlans = [
+        {
+            icon: "assets/images/pricing/pricing-icon-1.png",
+            price: "100 руб",
+            tag: "Попробовать (3 дня)",
+            features: ["5 диалогов", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        },
+        {
+            icon: "assets/images/pricing/pricing-icon-2.png",
+            price: "350 руб/мес",
+            tag: "Базовый",
+            features: ["120 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        },
+        {
+            icon: "assets/images/pricing/pricing-icon-3.png",
+            price: "880 руб/мес",
+            tag: "Продвинутый",
+            features: ["1800 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        }
+    ],
+    yearlyPlans = [
+        {
+            icon: "assets/images/pricing/pricing-icon-1.png",
+            price: "1000 руб",
+            tag: "Попробовать",
+            features: ["30 диалогов", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        },
+        {
+            icon: "assets/images/pricing/pricing-icon-2.png",
+            price: "3500 руб",
+            tag: "Базовый",
+            features: ["120 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        },
+        {
+            icon: "assets/images/pricing/pricing-icon-3.png",
+            price: "8800 руб",
+            tag: "Продвинутый",
+            features: ["1800 диалогов в месяц", ...commonFeatures],
+            btnText: "Выбрать тариф",
+            btnLink: "/contact"
+        }
+    ]
+} = Astro.props;
+---
+<!-- pricing section start -->
+<section id="pricing" class="pricing-section pricing-two pb-70 md-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- pricing title box start -->
+                <div class="pricing-title-box wow fadeInUp" data-wow-delay=".2s">
+                    <!-- section title start -->
+                    <div class="section-title text-center mb-30">
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                    </div>
+                    <!-- section title end -->
+                    <div class="pricing-tabs">
+                        <!-- nav tabs start -->
+                        <nav class="text-center">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-monthly-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-monthly" type="button" role="tab"
+                                        aria-controls="nav-monthly" aria-selected="true">Ежемесячно
+                                </button>
+                                <button class="nav-link" id="nav-yearly-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-yearly" type="button" role="tab"
+                                        aria-controls="nav-yearly" aria-selected="false">Ежегодно
+                                </button>
+                            </div>
+                        </nav>
+                        <!-- nav tabs end -->
+                    </div>
+                </div>
+                <!-- pricing title box end -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- tab content start -->
+                <div class="tab-content wow fadeInUp" data-wow-delay=".3s">
+                    <!-- tab pane start -->
+                    <div class="tab-pane fade active show" id="nav-monthly" role="tabpanel"
+                         aria-labelledby="nav-monthly-tab" tabindex="0">
+                        <div class="row">
+                            {monthlyPlans.map((plan) => (
+                                <div class="col-lg-4">
+                                    <div class="pricing-item right-after">
+                                        <div class="pricing-content">
+                                            <div class="pricing-top">
+                                                <div class="pricing-top-icon">
+                                                    <figure>
+                                                        <img src={plan.icon} alt="pricing icons">
+                                                    </figure>
+                                                </div>
+                                                <div class="pricing-top-content">
+                                                    <h2>{plan.price}</h2>
+                                                </div>
+                                            </div>
+                                            <div class="pricing-tag">
+                                                <span>{plan.tag}</span>
+                                            </div>
+                                            <div class="pricing-list">
+                                                <p class="text-white fw-bold mb-2">Что включено?</p>
+                                                <div class="check-list">
+                                                    <ul>
+                                                        {plan.features.map((feature) => (
+                                                            <li>{feature}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="pricing-button-wapper">
+                                                <a href={plan.btnLink} class="theme-button style-1" aria-label={plan.btnText}>
+                                                    <span data-text={plan.btnText}>{plan.btnText}</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <!-- tab pane end -->
+                    <!-- tab pane start -->
+                    <div class="tab-pane fade" id="nav-yearly" role="tabpanel" aria-labelledby="nav-yearly-tab"
+                         tabindex="0">
+                        <div class="row">
+                            {yearlyPlans.map((plan) => (
+                                <div class="col-lg-4">
+                                    <div class="pricing-item right-after">
+                                        <div class="pricing-content">
+                                            <div class="pricing-top">
+                                                <div class="pricing-top-icon">
+                                                    <figure>
+                                                        <img src={plan.icon} alt="pricing icons">
+                                                    </figure>
+                                                </div>
+                                                <div class="pricing-top-content">
+                                                    <h2>{plan.price}</h2>
+                                                    <p>При оплате за год — скидка 30%</p>
+                                                </div>
+                                            </div>
+                                            <div class="pricing-tag">
+                                                <span>{plan.tag}</span>
+                                            </div>
+                                            <div class="pricing-list">
+                                                <p class="text-white fw-bold mb-2">What's included?</p>
+                                                <div class="check-list">
+                                                    <ul>
+                                                        {plan.features.map((feature) => (
+                                                            <li>{feature}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="pricing-button-wapper">
+                                                <a href={plan.btnLink} class="theme-button style-1" aria-label={plan.btnText}>
+                                                    <span data-text={plan.btnText}>{plan.btnText}</span>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <!-- tab pane end -->
+                </div>
+                <!-- tab content end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- pricing section end -->

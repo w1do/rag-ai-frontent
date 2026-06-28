@@ -1,0 +1,114 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Shared/Hero.astro";
+import Gallery from "@/components/Shared/Gallery.astro";
+import Micon from "@/components/Shared/Micon.astro";
+import ImageGenerator from "@/components/Shared/ImageGenerator.astro";
+import Why from "@/components/Shared/Why.astro";
+import Projects from "@/components/Shared/Projects.astro";
+import MarqueeTicker from "@/components/Shared/MarqueeTicker.astro";
+import HowIt from "@/components/Shared/HowIt.astro";
+import Video from "@/components/Shared/Video.astro";
+import Testimonials from "@/components/Shared/Testimonials.astro";
+import Pricing from "@/components/Shared/Pricing.astro";
+import Team from "@/components/Shared/Team.astro";
+import Faq from "@/components/Shared/Faq.astro";
+import Blog from "@/components/Shared/Blog.astro";
+
+const seoData = {
+    title: "База знаний на RAG — умная система управления знаниями с ИИ",
+    description: "Создайте корпоративную базу знаний на базе технологий RAG и LLM. Обучите ИИ на своих документах, PDF и сайтах для мгновенного поиска и ответов на вопросы сотрудников и клиентов."
+};
+
+const miconItems = [
+    { title: "Быстрая Индексация", desc: "Загрузите PDF, DOCX или дайте ссылку на сайт, и ваша база знаний будет готова за считанные минуты." },
+    { title: "Semantic Search", desc: "ИИ понимает смысл вопроса, а не просто ищет совпадения слов, обеспечивая точную выборку данных." },
+    { title: "Без Галлюцинаций", desc: "Технология RAG заставляет ИИ отвечать строго на основе ваших документов, исключая выдуманные факты." }
+];
+
+const imageGenItems = [
+    {
+        icon: "assets/images/image-generator/icon-1.png",
+        title: "Загрузка и парсинг",
+        desc: "Система автоматически извлекает текст из ваших файлов и подготавливает его для обучения нейросети."
+    },
+    {
+        icon: "assets/images/image-generator/icon-2.png",
+        title: "Векторное хранилище",
+        desc: "Ваши данные преобразуются в векторные эмбеддинги, что позволяет находить информацию мгновенно."
+    },
+    {
+        icon: "assets/images/image-generator/icon-3.png",
+        title: "Генерация ответов",
+        desc: "RAG извлекает релевантные куски текста и передает их LLM для формирования точного ответа."
+    }
+];
+
+const marqueeItems = [
+    { text: "RAG База знаний" },
+    { text: "Retrieval Augmented Generation" },
+    { text: "Semantic Search" },
+    { text: "Векторная БД" },
+    { text: "ИИ-Поиск" }
+];
+
+const faqItems = [
+    {
+        question: "Какие форматы файлов поддерживает база знаний?",
+        answer: "Мы поддерживаем PDF, DOCX, TXT, CSV, Excel, JSON, а также прямой импорт по ссылке."
+    },
+    {
+        question: "Как часто можно обновлять документы?",
+        answer: "Вы можете обновлять документы в любое время. Система автоматически переиндексирует базу знаний."
+    }
+];
+---
+
+<Layout title={seoData.title} description={seoData.description}>
+    <Hero 
+        subTitle="Интеллектуальная база знаний на RAG"
+        title="Ваша корпоративная"
+        titleAccent="база знаний"
+        titleMinutes="на стеке RAG"
+        desc="Технология Retrieval Augmented Generation (RAG) превращает ваши статические документы в живую интерактивную систему."
+    />
+    <Gallery />
+    <Micon items={miconItems} />
+    <ImageGenerator 
+        titlePre="Как работает интеллектуальная "
+        titleAccent="база знаний"
+        titlePost="?"
+        items={imageGenItems}
+    />
+    <Why 
+        subTitle="Преимущества RAG"
+        titlePre="Почему RAG лучше "
+        titleAccent="обычного поиска"
+        titlePost="?"
+    />
+    <Projects 
+        titlePre="Где нужна "
+        titleAccent="умная база знаний"
+        titlePost="?"
+    />
+    <MarqueeTicker items={marqueeItems} />
+    <HowIt 
+        titlePre="3 шага к "
+        titleAccent="умной базе знаний"
+        titlePost=""
+    />
+    <Video />
+    <Testimonials />
+    <Pricing />
+    <Team 
+        titlePre="Эксперты по "
+        titleAccent="умным знаниям"
+    />
+    <Faq items={faqItems} />
+    <Blog 
+        subTitle="Блог о RAG"
+        titlePre="Статьи о "
+        titleAccent="базах знаний"
+        titlePost=""
+    />
+</Layout>

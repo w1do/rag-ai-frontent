@@ -1,0 +1,84 @@
+---
+interface WhyItem {
+    icon: string;
+    title: string;
+    desc: string;
+}
+
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    items?: WhyItem[];
+}
+
+const {
+    subTitle = "Почему BotSync",
+    titlePre = "Почему стоит выбрать нашу ",
+    titleAccent = "RAG-платформу",
+    titlePost = "?",
+    items = [
+        {
+            icon: "assets/images/why/icon-1.png",
+            title: "Экономия времени",
+            desc: "Автоматизируйте до 80% рутинных запросов клиентов, освобождая сотрудников для решения действительно сложных и творческих задач."
+        },
+        {
+            icon: "assets/images/why/icon-2.png",
+            title: "Мультимодальность",
+            desc: "Наш ИИ понимает не только текст, но и голосовые сообщения, а также умеет работать со сложными структурами данных и таблицами."
+        },
+        {
+            icon: "assets/images/why/icon-3.png",
+            title: "Безопасность данных",
+            desc: "Ваша интеллектуальная собственность остается под защитой. Мы обеспечиваем конфиденциальность данных при обучении ваших локальных моделей."
+        },
+        {
+            icon: "assets/images/why/icon-4.png",
+            title: "Легкая интеграция",
+            desc: "Установите готовый виджет на сайт за одну минуту или используйте наше мощное API для глубокой интеграции в ваши рабочие процессы."
+        }
+    ]
+} = Astro.props;
+---
+<!-- why section start -->
+<section class="why-section mlr">
+    <!-- why wapper start -->
+    <div class="why-wapper pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="bakground-assets">
+            <img class="shape-four" src="assets/images/hero/hero-2-shape-4.png" alt="hero shape four">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- section title start -->
+                    <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                    </div>
+                    <!-- section title end -->
+                </div>
+                <div class="col-lg-8">
+                    <div class="why-box">
+                        {items.map((item, index) => (
+                            <div class="why-items right-after wow fadeInUp" data-wow-delay={`${0.3 + index * 0.1}s`}>
+                                <div class="why-icon">
+                                    <figure>
+                                        <img src={item.icon} alt={item.title}>
+                                    </figure>
+                                </div>
+                                <div class="why-content">
+                                    <h2>{item.title}</h2>
+                                    <p>{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- why wapper end -->
+</section>
+<!-- why section end -->

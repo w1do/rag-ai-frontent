@@ -1,0 +1,117 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Shared/Hero.astro";
+import Gallery from "@/components/Shared/Gallery.astro";
+import Micon from "@/components/Shared/Micon.astro";
+import ImageGenerator from "@/components/Shared/ImageGenerator.astro";
+import Why from "@/components/Shared/Why.astro";
+import Projects from "@/components/Shared/Projects.astro";
+import MarqueeTicker from "@/components/Shared/MarqueeTicker.astro";
+import HowIt from "@/components/Shared/HowIt.astro";
+import Video from "@/components/Shared/Video.astro";
+import Testimonials from "@/components/Shared/Testimonials.astro";
+import Pricing from "@/components/Shared/Pricing.astro";
+import Team from "@/components/Shared/Team.astro";
+import Faq from "@/components/Shared/Faq.astro";
+import Blog from "@/components/Shared/Blog.astro";
+
+const seoData = {
+    title: "Чат бот с ИИ онлайн — умный нейросетевой помощник для бизнеса",
+    description: "Используйте современный чат бот с ИИ для общения с клиентами. Нейросеть чат бот на базе GPT и RAG обеспечит интеллектуальные ответы 24/7. Внедрение ИИ чат бота на любой сайт."
+};
+
+const miconItems = [
+    { title: "Человечный Диалог", desc: "Нейросеть чат бот общается на естественном языке, понимая нюансы и подстраиваясь под собеседника." },
+    { title: "Онлайн 24/7", desc: "Ваш ИИ-помощник никогда не спит, обеспечивая мгновенные ответы клиентам в любое время суток." },
+    { title: "Умная Поддержка", desc: "ИИ бот для сайта самостоятельно решает типичные запросы, снижая нагрузку на ваших операторов." }
+];
+
+const imageGenItems = [
+    {
+        icon: "assets/images/image-generator/icon-1.png",
+        title: "Современные LLM",
+        desc: "Мы используем последние версии GPT и других нейросетей для обеспечения высокого качества диалога."
+    },
+    {
+        icon: "assets/images/image-generator/icon-2.png",
+        title: "Мгновенная настройка",
+        desc: "Задайте промпт, выберите личность бота, и он готов к общению с вашими клиентами."
+    },
+    {
+        icon: "assets/images/image-generator/icon-3.png",
+        title: "Аналитика чатов",
+        desc: "Отслеживайте все диалоги, оценивайте качество ответов и улучшайте взаимодействие с клиентами."
+    }
+];
+
+const marqueeItems = [
+    { text: "ИИ Чат-бот" },
+    { text: "Нейросеть онлайн" },
+    { text: "GPT-4 Помощник" },
+    { text: "Умные диалоги" }
+];
+
+const faqItems = [
+    {
+        question: "Можно ли настроить личность и стиль общения бота?",
+        answer: "Да, вы можете полностью настроить «инструкции» (промпты), задав тон общения и роль. Бот будет строго придерживаться выбранного стиля."
+    },
+    {
+        question: "На каких языках может общаться ИИ чат бот?",
+        answer: "Наш чат бот ии онлайн поддерживает более 90 языков, включая русский, английский и другие."
+    },
+    {
+        question: "Нужна ли установка дополнительного ПО?",
+        answer: "Нет, наш сервис работает полностью в облаке. Для внедрения достаточно добавить скрипт на ваш сайт."
+    }
+];
+---
+
+<Layout title={seoData.title} description={seoData.description}>
+    <Hero 
+        subTitle="Умный чат бот с ИИ онлайн"
+        title="Ваш персональный"
+        titleAccent="ИИ чат бот"
+        titleMinutes="за 5 минут"
+        desc="Общение с ИИ становится доступным для вашего бизнеса. Наш чат бот ии онлайн обеспечивает качественную поддержку и мгновенную обработку заявок."
+    />
+    <Gallery />
+    <Micon items={miconItems} />
+    <ImageGenerator 
+        titlePre="Почему наш "
+        titleAccent="чат бот с ИИ"
+        titlePost=" лучший?"
+        items={imageGenItems}
+    />
+    <Why 
+        subTitle="ИИ для бизнеса"
+        titlePre="Преимущества "
+        titleAccent="нейросетевого"
+        titlePost=" общения"
+    />
+    <Projects 
+        titlePre="Где внедрить "
+        titleAccent="ИИ чат-бота"
+        titlePost="?"
+    />
+    <MarqueeTicker items={marqueeItems} />
+    <HowIt 
+        titlePre="Как начать "
+        titleAccent="чат с ИИ"
+        titlePost="?"
+    />
+    <Video />
+    <Testimonials />
+    <Pricing />
+    <Team 
+        titlePre="Эксперты в области "
+        titleAccent="ИИ и Чат-ботов"
+    />
+    <Faq items={faqItems} />
+    <Blog 
+        subTitle="Блог о нейросетях"
+        titlePre="Советы по "
+        titleAccent="ИИ чат-ботам"
+        titlePost=""
+    />
+</Layout>

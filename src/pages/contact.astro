@@ -1,0 +1,172 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+
+const seoData = {
+    title: "Контакты — связаться с командой BotSync",
+    description: "Свяжитесь с BotSync: поможем создать умного ИИ чат-бота с базой знаний RAG, ответим на вопросы по интеграции, обучению нейросети и тарифам. Telegram, email, телефон."
+};
+---
+<Layout title={seoData.title} description={seoData.description}>
+    <Breadcrumb title="Контакты" />
+
+    <!-- contact section start -->
+    <section class="contact-section pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-wapper">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-4">
+                                <!-- section title start -->
+                                <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                                    <span class="sub-title">Наши контакты</span>
+                                    <h2>Свяжитесь с нами уже сегодня</h2>
+                                </div>
+                                <!-- section title end -->
+                                <!-- contact item wrapper start -->
+                                <div class="contact-item-wrapper wow fadeInUp" data-wow-delay=".3s">
+                                    <!-- contact items start -->
+                                    <div class="contact-item">
+                                        <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                                        <div class="contact-content">
+                                            <p>Телефон</p>
+                                            <h3>+7 (3452) 00-00-00</h3>
+                                        </div>
+                                    </div>
+                                    <!-- contact items end -->
+                                    <!-- contact items start -->
+                                    <div class="contact-item">
+                                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                        <div class="contact-content">
+                                            <p>Email</p>
+                                            <h3>info@example.ru</h3>
+                                        </div>
+                                    </div>
+                                    <!-- contact items end -->
+                                    <!-- contact items start -->
+                                    <div class="contact-item">
+                                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                        <div class="contact-content">
+                                            <p>Адрес</p>
+                                            <h3>г. Тюмень, Россия</h3>
+                                        </div>
+                                    </div>
+                                    <!-- contact items end -->
+                                </div>
+                                <!-- contact item wrapper end -->
+                                <!-- contact social links start -->
+                                <div class="contact-social-links">
+                                    <ul class="social-icon">
+                                        <li>
+                                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- contact social links end -->
+                            </div>
+                            <div class="col-lg-7">
+                                <!-- contact form box start -->
+                                <div class="contact-form-box">
+                                    <div class="section-title">
+                                        <span class="sub-title">Напишите нам</span>
+                                        <h2>Будем рады помочь</h2>
+                                    </div>
+                                    <!-- default-form start -->
+                                    <div class="default-form contact-form">
+                                        <form action="contact.php" method="POST" id="contact" novalidate="novalidate">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="field-inner">
+                                                            <label for="name">Имя*</label>
+                                                            <input id="name" class="form-control" name="name" type="text" autocomplete="off" placeholder="Ваше имя" required="required">
+                                                            <span class="error" id="name-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="field-inner">
+                                                            <label for="email">Email*</label>
+                                                            <input id="email" class="form-control" name="email" type="email" autocomplete="off" placeholder="Ваш Email" required="required">
+                                                            <span class="error" id="email-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="field-inner">
+                                                            <label for="phone">Номер телефона*</label>
+                                                            <input id="phone" class="form-control" name="phone" type="text" autocomplete="off" placeholder="Ваш телефон" required="required">
+                                                            <span class="error" id="phone-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="field-inner">
+                                                            <label for="subject">Тема*</label>
+                                                            <input id="subject" class="form-control" name="subject" type="text" autocomplete="off" placeholder="Тема сообщения" required="required">
+                                                            <span class="error" id="subject-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <div class="field-inner">
+                                                            <label for="message">Сообщение*</label>
+                                                            <textarea id="message" class="form-control" name="message" autocomplete="off" placeholder="Текст сообщения" required="required"></textarea>
+                                                            <span class="error" id="message-error"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="contact-btn-wapper mt-10">
+                                                        <button type="submit" class="theme-button style-1" data-text="Отправить сообщение">
+                                                            <span data-text="Отправить сообщение">Отправить сообщение</span>
+                                                            <i class="fa-solid fa-arrow-right"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ajax-response"></div>
+                                        </form>
+                                    </div>
+                                    <!-- default-form end -->
+                                </div>
+                                <!-- contact form box end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact section end -->
+
+    <!-- Google Map start -->
+    <div class="google-map">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <!-- google map iframe start -->
+                    <div class="google-map-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d138766.19572886737!2d65.414436!3d57.153033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43bbe15d59043e09%3A0x8681e1cc5f06cc33!2z0KLRjtC80LXQvdGMLCDQotGO0LzQtdC90YHQutCw0Y8g0L7QsdC7Lg!5e0!3m2!1sru!2sru!4v1714470000000!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="google map"></iframe>
+                    </div>
+                    <!-- google map iframe end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Map end -->
+</Layout>

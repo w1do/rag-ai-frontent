@@ -1,0 +1,99 @@
+---
+interface FaqItem {
+    question: string;
+    answer: string;
+}
+
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    desc?: string;
+    items?: FaqItem[];
+}
+
+const {
+    subTitle = "Часто задаваемые вопросы",
+    titlePre = "Ваши ",
+    titleAccent = "вопросы",
+    titlePost = " об ИИ — наши ответы",
+    desc = "Мы собрали самые популярные вопросы о внедрении RAG-систем и обучении ИИ-агентов, чтобы помочь вам быстрее разобраться в возможностях BotSync.",
+    items = [
+        {
+            question: "Что такое RAG и как это помогает моему бизнесу?",
+            answer: "RAG (Retrieval-Augmented Generation) — это технология, которая позволяет ИИ использовать вашу собственную базу знаний (документы, сайт, файлы) для генерации ответов. Это гарантирует точность информации и исключает «галлюцинации» нейросети."
+        },
+        {
+            question: "Кому лучше всего подходит платформа BotSync?",
+            answer: "Платформа идеально подходит для отделов клиентской поддержки, отделов продаж, HR-департаментов и любых компаний, у которых есть большой объем накопленных знаний и потребность в быстрой выдаче ответов клиентам или сотрудникам."
+        },
+        {
+            question: "Могу ли я обучить бота на нескольких типах данных одновременно?",
+            answer: "Да, BotSync позволяет объединять данные из разных источников: вы можете одновременно загрузить PDF-инструкции, дать ссылку на ваш сайт и добавить JSON-выгрузки. ИИ будет учитывать все эти данные при формировании ответа."
+        },
+        {
+            question: "Насколько безопасно хранятся мои данные?",
+            answer: "Безопасность — наш приоритет. Все загруженные данные шифруются и используются исключительно для обучения вашего персонального ИИ-агента. Мы не передаем вашу интеллектуальную собственность третьим лицам и не используем её для обучения публичных моделей."
+        },
+        {
+            question: "Нужно ли мне уметь программировать для настройки бота?",
+            answer: "Нет, BotSync — это no-code платформа. Вы можете загружать документы и настраивать поведение бота через интуитивно понятный интерфейс. Установка виджета на сайт также не требует специальных навыков — достаточно скопировать и вставить одну строку кода."
+        }
+    ]
+} = Astro.props;
+---
+<!-- faq section start -->
+<section id="faq" class="faq-section-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- section title area start -->
+                <div class="section-title-area">
+                    <div class="section-title wow fadeInUp" data-wow-delay=".2s">
+                        <span class="sub-title bg-white">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                    </div>
+                    <div class="section-title-content wow fadeInUp" data-wow-delay=".2s">
+                        <p>{desc}</p>
+                    </div>
+                </div>
+                <!-- section title area end -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- faq-content start -->
+                <div class="faq-content wow fadeInUp" data-wow-delay=".3s">
+                    <!-- accordion start -->
+                    <div class="accordion" id="accordionExample">
+                        {items.map((item, index) => (
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id={`heading${index}`}>
+                                    <button class={`accordion-button ${index !== 0 ? 'collapsed' : ''}`} type="button" data-bs-toggle="collapse"
+                                            data-bs-target={`#collapse${index}`} aria-expanded={index === 0 ? "true" : "false"}
+                                            aria-controls={`collapse${index}`}>
+                                        {item.question}
+                                    </button>
+                                </h2>
+                                <div id={`collapse${index}`} class={`accordion-collapse collapse ${index === 0 ? 'show' : ''}`}
+                                     data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="inner">
+                                            <div class="accordion-content">
+                                                <p>{item.answer}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <!-- accordion end -->
+                </div>
+                <!-- faq-content end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- faq section end -->

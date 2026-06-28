@@ -1,0 +1,123 @@
+---
+import Header from "@/components/Layout/Header.astro";
+import Preloader from "@/components/Layout/Preloader.astro";
+import Footer from "@/components/Layout/Footer.astro";
+import Scripts from "@/components/Layout/Scripts.astro";
+import BackTop from "@/components/Layout/BackTop.astro";
+import Sidebar from "@/components/Layout/Sidebar.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+    canonicalURL?: string | URL;
+    type?: string;
+    schema?: object;
+}
+
+const { 
+    title, 
+    description, 
+    ogImage = "/assets/images/og-image.png", 
+    canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://botsync.ru"),
+    type = "website",
+    schema
+} = Astro.props;
+
+const siteName = "BotSync";
+const fullTitle = title ? `${title} | ${siteName}` : `${siteName} — Создание умных ИИ-ботов и RAG-систем для бизнеса`;
+const metaDescription = description || "BotSync — платформа для автоматизации бизнеса с помощью ИИ. Создайте умного чат-бота с базой знаний (RAG) за 5 минут. Обучение на ваших документах, голосе и данных.";
+
+const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": siteName,
+    "url": "https://botsync.ru",
+    "logo": "https://botsync.ru/assets/images/logo.png",
+    "description": metaDescription,
+    "sameAs": [
+        "https://t.me/botsync"
+    ]
+};
+---
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="BotSync">
+    <meta name="description" content={metaDescription}>
+    <meta name="keywords" content="BotSync, RAG система, ИИ бот для бизнеса, создание чат-ботов, автоматизация ИИ, база знаний ИИ, умный виджет на сайт, ИИ ассистент, чат-бот для сайта, интеграция LLM">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type}>
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:title" content={fullTitle}>
+    <meta property="og:description" content={metaDescription}>
+    <meta property="og:image" content={new URL(ogImage, Astro.site || "https://botsync.ru")}>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={canonicalURL}>
+    <meta property="twitter:title" content={fullTitle}>
+    <meta property="twitter:description" content={metaDescription}>
+    <meta property="twitter:image" content={new URL(ogImage, Astro.site || "https://botsync.ru")}>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL}>
+
+    <meta name="yandex-verification" content="c5e870d7146b2571" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(defaultSchema)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!-- page title -->
+    <title>{fullTitle}</title>
+</head>
+<!-- favicon icon -->
+<link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+<!-- font awesome css -->
+<link rel="stylesheet" href="/assets/css/all.min.css">
+<!-- bootstrap css -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<!-- swiper css -->
+<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+<!-- magnific css -->
+<link rel="stylesheet" href="/assets/css/magnific-popup.min.css">
+<!-- animate css -->
+<link rel="stylesheet" href="/assets/css/animate.css">
+<!-- main css  -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- style css -->
+<link rel="stylesheet" href="/style.css">
+<body>
+
+<div class="page-wrapper">
+    <Preloader />
+    
+    <BackTop />
+
+    <!-- mouse cursor start -->
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+    <!-- mouse cursor end -->
+
+    <Sidebar/>
+    <Header/>
+
+
+    <main class="main">
+        <slot />
+    </main>
+
+    <Footer/>
+</div>
+
+<Scripts />
+</body>
+</html>

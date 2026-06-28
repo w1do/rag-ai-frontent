@@ -1,0 +1,418 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Cta from "@/components/Shared/Cta.astro";
+import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
+
+const seoData = {
+    title: "Вопросы и ответы об ИИ-ботах и RAG-системах",
+    description: "Частые вопросы о платформе BotSync: что такое RAG и LLM, как обучить чат-бота на своих данных, интеграция на сайт и через API, тарифы и поддержка ИИ-ассистента."
+};
+---
+<Layout title={seoData.title} description={seoData.description}>
+    <Breadcrumb title="FAQ" />
+
+    <!-- faq section start -->
+    <section class="faq-section pt-100 md-pt-80 pb-100 md-pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- widget sidebar start -->
+                    <div class="widget-sidebar sticky wow fadeInUp" data-wow-delay="0.2s">
+                        <!-- widget faqs catagery start -->
+                        <div class="widget widget-faqs-catagery">
+                            <div class="widget-title">
+                                <h2>Что нужно знать о ИИ ботах на RAG</h2>
+                            </div>
+                            <!-- widget content start -->
+                            <div class="widget-content">
+                                <ul class="catagery-list">
+                                    <li>
+                                        <a href="#faq_1"><span class="categories-name">Общие вопросы </span> <i class="fa-solid fa-angle-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq_2"><span class="categories-name">Технология RAG </span> <i class="fa-solid fa-angle-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq_3"><span class="categories-name">Интеграция и API </span> <i class="fa-solid fa-angle-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq_4"><span class="categories-name">Тарифы и поддержка </span> <i class="fa-solid fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- widget content end -->
+                        </div>
+                        <!-- widget faqs catagery end -->
+                    </div>
+                    <!-- widget sidebar end -->
+                </div>
+                <div class="col-lg-8">
+                    <!-- faqs catagery start -->
+                    <div class="faqs-catagery">
+                        <!-- single faqs start -->
+                        <div class="single-faqs wow fadeInUp" data-wow-delay="0.3s" id="faq_1">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <h2>Вопросы и ответы</h2>
+                            </div>
+                            <!-- section title end -->
+                            <!-- accordion start -->
+                            <div class="accordion" id="accordionExample">
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Что такое платформа BotSync?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>BotSync — это современная платформа для автоматизации клиентской поддержки. Мы помогаем создать умного чат-бота всего за 5 минут. Наша RAG система позволяет загружать ваши документы, ссылки или JSON, чтобы бот отвечал точно по вашей базе знаний.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Что такое RAG простыми словами?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Retrieval-Augmented Generation (RAG) — это передовая технология, которая объединяет возможности больших языковых моделей (LLM) с вашей собственной базой данных. RAG система ищет релевантную информацию в ваших материалах и генерирует точный ответ, исключая галлюцинации.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Кому подойдет платформа BotSync?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Платформа подходит всем видам бизнеса, которым необходимо создать ИИ агента на базе ваших знаний. Будь то интернет-магазин, онлайн-школа или B2B-компания — умный чат-бот с детальным погружением в диалог повысит конверсию и лояльность клиентов.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Можно ли использовать платформу бесплатно?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Нет, стартовый тариф от 100 руб, это не так много чтобы попробовать систему</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Поддерживает ли бот распознавание аудио?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Да, наш чат-бот поддерживает голосовые сообщения. Пользователь может отправить аудио, а система распознает речь и сгенерирует релевантный ответ на базе вашей документации.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                            </div>
+                            <!-- accordion end -->
+                        </div>
+                        <!-- single faqs end -->
+                        <!-- single faqs start -->
+                        <div class="single-faqs wow fadeInUp" data-wow-delay="0.4s" id="faq_2">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <h2>Технология RAG</h2>
+                            </div>
+                            <!-- section title end -->
+                            <!-- accordion start -->
+                            <div class="accordion" id="accordionExample1">
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSeven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                            Что такое LLM и RAG в нашем сервисе?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>LLM (Large Language Model) отвечает за генерацию естественного текста, а RAG-агент ищет информацию по вашей базе данных. Вместе они создают ИИ агента, который общается с пользователями так же естественно, как человек, но строго по вашим правилам и документам.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingEight">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                            Как происходит обучение RAG модели?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Обучение RAG происходит автоматически и без программирования. Вы просто загружаете данные (текстовые документы, JSON-файлы) или указываете ссылку на сайт. Наш RAG сервис сам обработает информацию, создаст векторную базу знаний и подготовит бота к работе.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingNine">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                            Можно ли парсить сайты для базы знаний RAG?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Да, платформа BotSync поддерживает автоматический парсинг сайтов. Вам достаточно указать URL, и система соберет весь доступный контент, чтобы бот мог консультировать клиентов по товарам, услугам или статьям с вашего сайта.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                            Что такое ИИ агент на базе ваших знаний?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Это ваш персональный умный бот. В отличие от обычного ChatGPT, он не придумывает факты, а использует технологию RAG для поиска ответов исключительно в тех документах и базах данных, которые вы ему предоставили.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                            </div>
+                            <!-- accordion end -->
+                        </div>
+                        <!-- single faqs end -->
+                        <!-- single faqs start -->
+                        <div class="single-faqs wow fadeInUp" data-wow-delay="0.5s" id="faq_3">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <h2>Интеграция и API</h2>
+                            </div>
+                            <!-- section title end -->
+                            <!-- accordion start -->
+                            <div class="accordion" id="accordionExample2">
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThirteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                            Как добавить созданного бота на сайт?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Чат-бот легко интегрируется на любой сайт (интернет-магазин, блог, лендинг) с помощью небольшого скрипта виджета. Вы просто копируете код из личного кабинета BotSync и вставляете его в HTML вашего сайта.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFourteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                                            Есть ли у вас API для управления ботами?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Да, платформа BotSync предлагает полноценное управление API на своей стороне. Вы можете интегрировать RAG систему в свои собственные интерфейсы, мобильные приложения или CRM, отправляя запросы и получая ответы от обученной LLM.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFifteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                                            Сложно ли настроить бота без навыков программирования?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Абсолютно нет! Разработка RAG обычно требует глубоких знаний, но с платформой BotSync вы создаете бота через удобный интерфейс. Вам нужно лишь загрузить данные, а наша система сама выполнит обучение и настройку.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSixteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                                            Можно ли развернуть RAG систему на своем сервере (On-Premise)?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSixteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>В базовых тарифах BotSync предоставляет надежный облачный сервис. Если вашей компании требуются повышенные стандарты безопасности, мы предлагаем разработку и внедрение локальной RAG модели и LLM на серверах вашей компании.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                            </div>
+                            <!-- accordion end -->
+                        </div>
+                        <!-- single faqs end -->
+                        <!-- single faqs start -->
+                        <div class="single-faqs wow fadeInUp" data-wow-delay="0.6s" id="faq_4">
+                            <!-- section title start -->
+                            <div class="section-title">
+                                <h2>Тарифы и поддержка</h2>
+                            </div>
+                            <!-- section title end -->
+                            <!-- accordion start -->
+                            <div class="accordion" id="accordionExample3">
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingNineteen">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+                                            От чего зависит стоимость использования RAG сервиса?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Стоимость рассчитывается на основе двух факторов: объема вашей базы знаний (количества загруженных документов, ссылок и JSON-данных) и количества токенов (запросов), которые обрабатывает LLM.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwenty">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                                            Есть ли скрытые платежи за использование ИИ?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Нет, мы работаем по прозрачной модели подписки. В личном кабинете вы всегда видите расход лимитов RAG системы, и списания происходят строго согласно выбранному тарифу.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwentyone">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyone" aria-expanded="false" aria-controls="collapseTwentyone">
+                                            Как работает техническая поддержка BotSync?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwentyone" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Наша команда поддержки всегда на связи. Вы можете задать любой вопрос разработчикам W1DO DIGITAL напрямую через Telegram: @W1DO_DIGITAL или написать нам на почту: uniqdeveloper@yandex.ru.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                                <!-- accordion item start -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwentytwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentytwo" aria-expanded="false" aria-controls="collapseTwentytwo">
+                                            Поможете ли вы с обучением RAG и настройкой?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwentytwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample3">
+                                        <div class="accordion-body">
+                                            <div class="inner">
+                                                <div class="accordion-content">
+                                                    <p>Да! Мы предоставляем подробную документацию, а наша служба технической поддержки готова помочь вам на всех этапах: от загрузки документов до внедрения готового ИИ агента на ваш сайт.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- accordion item end -->
+                            </div>
+                            <!-- accordion end -->
+                        </div>
+                        <!-- single faqs end -->
+                    </div>
+                    <!-- faqs catagery end -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- faq section end -->
+    <Cta/>
+</Layout>

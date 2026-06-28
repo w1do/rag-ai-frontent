@@ -1,0 +1,155 @@
+---
+interface TestimonialItem {
+    quote: string;
+    author: string;
+    position: string;
+    avatar: string;
+    rating: number;
+}
+
+interface Props {
+    subTitle?: string;
+    titlePre?: string;
+    titleAccent?: string;
+    titlePost?: string;
+    desc?: string;
+    avatars?: string[];
+    reviewText?: string;
+    testimonials?: TestimonialItem[];
+}
+
+const {
+    subTitle = "Реальные внедрения ИИ",
+    titlePre = "Что говорят наши ",
+    titleAccent = "клиенты",
+    titlePost = "",
+    desc = "Мы гордимся тем, что помогаем компаниям трансформировать их бизнес-процессы. Посмотрите, как BotSync решает реальные задачи наших пользователей.",
+    avatars = [
+        "assets/images/avatar/avatar-1.jpg",
+        "assets/images/avatar/avatar-2.jpg",
+        "assets/images/avatar/avatar-3.jpg",
+        "assets/images/avatar/avatar-4.jpg"
+    ],
+    reviewText = "Более 40+ компаний уже внедрили BotSync",
+    testimonials = [
+        {
+            quote: "«Внедрение BotSync в нашу техподдержку позволило сократить время ответа клиентам в 5 раз. ИИ отлично справляется с FAQ и техническими вопросами, используя нашу базу знаний.»",
+            author: "Александр Иванов",
+            position: "Технический директор",
+            avatar: "assets/images/avatar/avatar-1.jpg",
+            rating: 5
+        },
+        {
+            quote: "«Мы обучили ИИ на наших каталогах и регламентах продаж. Теперь бот квалифицирует лидов и отвечает на вопросы о товарах даже ночью. Это значительно повысило нашу конверсию.»",
+            author: "Елена Смирнова",
+            position: "Руководитель отдела продаж",
+            avatar: "assets/images/avatar/avatar-2.jpg",
+            rating: 5
+        },
+        {
+            quote: "«BotSync помог нам создать базу знаний для внутренних нужд HR. Теперь сотрудники получают ответы на вопросы по страховкам и отпускам мгновенно, не отвлекая специалистов.»",
+            author: "Дмитрий Волков",
+            position: "HR-директор",
+            avatar: "assets/images/avatar/avatar-3.jpg",
+            rating: 5
+        }
+    ]
+} = Astro.props;
+---
+<!-- testimonials section start -->
+<section class="testimonials-section-3 pt-100 md-pt-80 pb-100 md-pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="testimonials-left wow fadeInUp" data-wow-delay=".2s">
+                    <!-- section title start -->
+                    <div class="section-title">
+                        <span class="sub-title">{subTitle}</span>
+                        <h2>{titlePre}<span>{titleAccent}</span>{titlePost}</h2>
+                        <p class="text-white">{desc}</p>
+                    </div>
+                    <!-- section title end -->
+
+                    <!-- testimonials avatar-wapper start -->
+                    <div class="testimonials-avatar-wapper">
+                        <ul class="testimonials-avatar-list mb-0 d-flex gap-0">
+                            {avatars.map((avatar) => (
+                                <li>
+                                    <figure>
+                                        <img src={avatar} alt="avatar">
+                                    </figure>
+                                </li>
+                            ))}
+                            <li>
+                                <span>40+</span>
+                            </li>
+                        </ul>
+                        <div class="review-content">
+                            <p>{reviewText}</p>
+                        </div>
+                    </div>
+                    <!-- testimonials avatar-wapper end -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- testimonials right start -->
+                <div class="testimonials-right">
+                    <!-- testimonials slider start -->
+                    <div class="swiper testimonials-slider-one">
+                        <!-- swiper wrapper start -->
+                        <div class="swiper-wrapper">
+                            {testimonials.map((item) => (
+                                <div class="swiper-slide">
+                                    <!-- testimonials item start -->
+                                    <div class="testimonials-item right-after">
+                                        <div class="testimonials-meta">
+                                            <div class="testimonials-quote">
+                                                <i class="fa-solid fa-quote-left"></i>
+                                            </div>
+                                            <div class="testimonials-rating">
+                                                {[...Array(item.rating)].map(() => (
+                                                    <i class="fa-solid fa-star active"></i>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div class="testimonials-content">
+                                            <p>{item.quote}</p>
+                                        </div>
+                                        <div class="testimonials-author-box">
+                                            <div class="testimonials-author">
+                                                <div class="testimonials-author-image">
+                                                    <figure>
+                                                        <img src={item.avatar} alt={item.author}>
+                                                    </figure>
+                                                </div>
+                                                <div class="testimonials-author-content">
+                                                    <h2>{item.author}</h2>
+                                                    <p>{item.position}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- testimonials item end -->
+                                </div>
+                            ))}
+                        </div>
+                        <!-- swiper wrapper end -->
+                        <!-- swiper actions start -->
+                        <div class="swiper-actions ms-2 mt-30">
+                            <div class="dot"></div>
+                        </div>
+                        <!-- swiper actions end -->
+                    </div>
+                    <!-- testimonials slider end -->
+
+                </div>
+                <!-- testimonials right end -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonials section end -->

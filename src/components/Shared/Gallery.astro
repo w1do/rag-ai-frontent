@@ -1,0 +1,52 @@
+---
+interface GalleryItem {
+    image: string;
+    alt: string;
+}
+
+interface Props {
+    images?: GalleryItem[];
+}
+
+const {
+    images = [
+        { image: "assets/images/image/image-1.jpg", alt: "image one" },
+        { image: "assets/images/image/image-2.jpg", alt: "image two" },
+        { image: "assets/images/image/image-3.jpg", alt: "image three" },
+        { image: "assets/images/image/image-4.jpg", alt: "image four" },
+        { image: "assets/images/image/image-5.jpg", alt: "image five" }
+    ]
+} = Astro.props;
+---
+<!-- image section start -->
+<div class="image-section">
+    <!-- bakground assets start -->
+    <div class="bakground-assets">
+        <img class="shape-one" src="assets/images/image/shape-top.png" alt="shape top">
+        <img class="shape-two" src="assets/images/image/shape-bottom.png" alt="shape bottom">
+    </div>
+    <!-- bakground assets end -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- image wapper start -->
+                <div class="image-wapper">
+                    {/* Повторяем дважды для эффекта бесконечной прокрутки, если это предусмотрено стилями */}
+                    {[1, 2].map(() => (
+                        <div class="image-box">
+                            {images.map((item) => (
+                                <div class="image-item">
+                                    <figure>
+                                        <img src={item.image} alt={item.alt}>
+                                    </figure>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+                <!-- image wapper end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- image section end -->

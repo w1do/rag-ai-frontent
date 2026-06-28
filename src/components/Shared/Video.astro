@@ -1,0 +1,24 @@
+---
+interface Props {
+    bgImage?: string;
+    videoUrl?: string;
+}
+
+const {
+    bgImage = "assets/images/video/bg-vodeo-1.jpg",
+    videoUrl = "https://www.youtube.com/watch?v=Y-x0efG1seA"
+} = Astro.props;
+---
+<!-- video section start -->
+<div class="video-section-1 mlr">
+    <div class="video-wapper" data-img-src={bgImage}>
+        <div class="video-circle">
+            <div class="cta-video-wapper wow fadeInUp" data-wow-delay=".2s">
+                <a class="video-popup video-play play-center text-accent-one" href={videoUrl} aria-label="play video">
+                    <span class="icon"><i class="fa-solid fa-play"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- video section end -->

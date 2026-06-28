@@ -1,0 +1,41 @@
+---
+interface MarqueeItem {
+    text: string;
+}
+
+interface Props {
+    items?: MarqueeItem[];
+    icon?: string;
+}
+
+const {
+    items = [
+        { text: "RAG Системы" },
+        { text: "База знаний" },
+        { text: "ИИ-Автоматизация" },
+        { text: "LLM Модели" },
+        { text: "Чат-боты" }
+    ],
+    icon = "assets/images/icon/marquee.png"
+} = Astro.props;
+---
+<!-- marquee ticker section start -->
+<div class="marquee-ticker-section">
+    <div class="marquee-ticker-box">
+        {[1, 2].map(() => (
+            <div class="marquee-content">
+                {items.map((item) => (
+                    <>
+                        <div class="marquee-icon">
+                            <img src={icon} alt="marquee icon">
+                        </div>
+                        <p data-text={item.text}>
+                            {item.text}
+                        </p>
+                    </>
+                ))}
+            </div>
+        ))}
+    </div>
+</div>
+<!-- marquee ticker section end -->

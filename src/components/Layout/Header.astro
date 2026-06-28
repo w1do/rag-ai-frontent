@@ -1,0 +1,187 @@
+---
+import { getCollection } from 'astro:content';
+
+const possibilities = await getCollection('possibilities');
+const sortedPossibilities = possibilities.sort((a, b) => a.data.order - b.data.order);
+
+interface Bot {
+    id: number;
+    name: string;
+    slug: string;
+    description?: string;
+}
+
+let bots: Bot[] = [];
+try {
+    const res = await fetch('https://api.botsync.ru/api/chats', {
+        headers: {
+            'accept': 'application/json'
+        }
+    });
+    if (res.ok) {
+        const data = await res.json();
+        bots = data.data || [];
+    }
+} catch (e) {
+    console.error('Error fetching bots:', e);
+}
+
+// В шапке показываем только 10 примеров ботов
+const headerBots = bots.slice(0, 10);
+---
+
+<!-- header start -->
+<header class="header header-3">
+    <!-- header lower start -->
+    <div class="header-lower">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-between g-0">
+                <div class="col-12">
+                    <!-- header content start -->
+                    <div class="header-content d-flex align-items-center">
+                        <!-- header left start -->
+                        <div class="header-left">
+                            <!-- logo box start -->
+                            <div class="logo-box">
+                                <div class="logo">
+                                    <a href="/">
+                                        <figure>
+                                            <img src="/assets/images/logo/logo.png" alt="botsync" width="50" height="50">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- logo box end  -->
+                        </div>
+                        <!-- header right end -->
+
+                        <!-- header navigation start -->
+                        <div class="header-navigation d-flex align-items-center m-auto">
+                            <!-- main menu -->
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">Главная</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">База знаний<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="/chatbot-ai">ИИ Чат-бот</a></li>
+                                                <li><a href="/automated-answers-rag">RAG Автоответы</a></li>
+                                                <li><a href="/chatbot-integration">Внедрение на сайт</a></li>
+                                                <li><a href="/knowledge-base-rag">База знаний RAG</a></li>
+                                                <li><a href="/rag-systems">RAG Системы</a></li>
+                                                <li><a href="/avito-ai-agent">ИИ Агент для Авито</a></li>
+                                                <li><a href="/car-service-ai">ИИ для Автосервиса</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/possibilities">Возможности<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                {sortedPossibilities.map((possibility) => (
+                                                    <li>
+                                                        <a href={`/possibilities/${possibility.id}`}>
+                                                            {possibility.data.title}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/bots">Примеры ботов<i class="fa-solid fa-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                {headerBots.map((bot) => (
+                                                    <li>
+                                                        <a href={`/bots/${bot.slug}`}>{bot.name}</a>
+                                                    </li>
+                                                ))}
+                                                <li class="menu-view-all">
+                                                    <a href="/bots">Смотреть всех ботов <i class="fa-solid fa-arrow-right"></i></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/pricing">Тарифы</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/faq">FAQ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/contact">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- header navigation end -->
+
+                        <!-- header right start -->
+                        <div class="header-right d-flex align-items-center gap-3">
+                            <!-- header button -->
+                            <div class="header-button">
+                                <a href="/contact" class="theme-button style-1" aria-label="Начать бесплатно">
+                                    <span data-text="Начать бесплатно">Начать бесплатно</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <!-- button wapper -->
+                            <div class="button-wapper">
+                                <!-- header-search -->
+                                <div class="header-search">
+                                    <a href="" class="search-btn" aria-label="search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                                <!-- header sidebar  -->
+                                <div class="header-sidebar">
+                                    <a class="sidebar-toggler" data-bs-toggle="offcanvas"
+                                       href="#offcanvas-sidebar" aria-label="sidebar toggler" role="button"
+                                       aria-controls="offcanvas-sidebar">
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- header right end -->
+                    </div>
+                    <!-- header content end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header lower end -->
+
+    <!-- search box start -->
+    <div id="search-box">
+                <span class="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+        <div class="search-wapper">
+            <form action="#" class="search-form" id="search-form">
+                <div class="input-group">
+                    <input type="text" id="searchs" name="search" placeholder="Поиск по сайту..."
+                           autocomplete="off" required="required">
+                </div>
+                <button type="submit" class="search-submit-btn" data-text="search submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- search box end -->
+</header>
+<!-- header end-->
+
+<style>
+    .main-menu .submenu .menu-view-all a {
+        font-weight: 600;
+        color: var(--primary-color, #6a5af9);
+    }
+
+    .main-menu .submenu .menu-view-all a i {
+        margin-left: 6px;
+    }
+</style>
