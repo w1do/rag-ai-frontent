@@ -13,3 +13,6 @@
 11:02:05 watching for file changes...
 11:02:31 [200] / 61ms
 11:02:33 [200] / 4ms
+11:06:37 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:07:01 [watch] /src/components/Shared/react/AIChat/AIChat.tsx
+11:07:12 [watch] /src/components/Shared/react/AIChat/AIChat.css

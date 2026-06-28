@@ -14,6 +14,7 @@
     box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
     height: 640px;
     max-height: 80vh;
+    text-align: left;
 }
 
 /* ---------- header ---------- */
@@ -102,6 +103,7 @@
     flex-wrap: wrap;
     gap: 8px;
     padding: 14px 24px 0;
+    margin-bottom: 10px;
 }
 
 .ai-chat__action {
@@ -221,6 +223,7 @@
     font-size: 15px;
     line-height: 1.55;
     word-break: break-word;
+    text-align: left;
 }
 
 /* ---------- markdown ---------- */
