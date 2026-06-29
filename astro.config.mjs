@@ -9,9 +9,6 @@ import node from '@astrojs/node';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://botsync.ru',
-    server: {
-        host: true
-    },
     adapter: node({
         mode: 'standalone',
     }),
