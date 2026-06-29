@@ -13,7 +13,7 @@ interface Bot {
 
 let bots: Bot[] = [];
 try {
-    const res = await fetch('https://botsync.ru/api/chats', {
+    const res = await fetch(`${import.meta.env.PUBLIC_API_BASE}/chats`, {
         headers: {
             'accept': 'application/json'
         }
