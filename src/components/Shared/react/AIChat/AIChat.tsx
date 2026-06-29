@@ -13,7 +13,7 @@ export default function AIChat({
     subtitle = "Спросите что угодно — умный ИИ-агент BotSync ответит мгновенно",
     inputPlaceholder = "Напишите сообщение...",
     greeting = "Здравствуйте! Я — ИИ-ассистент BotSync. Чем могу помочь?",
-    apiBase = import.meta.env.PUBLIC_API_BASE || "https://botsync.ru/api",
+    apiBase = import.meta.env.PUBLIC_SHARE ?? "",
     chatId = Number(import.meta.env.PUBLIC_CHAT_ID) || 3,
 }: AIChatProps) {
     const [finalChatId, setFinalChatId] = useState(chatId);

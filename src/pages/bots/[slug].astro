@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Shared/Breadcrumb.astro";
 import About from "@/components/Shared/About.astro";
 import AIChat from "@/components/Shared/react/AIChat/AIChat.tsx";
 
-const API_BASE = "https://botsync.ru/api";
+const API_BASE = import.meta.env.PUBLIC_API_BASE
 
 interface Bot {
     id: number;
@@ -39,7 +39,7 @@ async function fetchBotBySlug(slug: string): Promise<Bot | null> {
 export async function getStaticPaths() {
     // ВАЖНО: getStaticPaths выполняется в изолированном контексте и не видит
     // переменные верхнего уровня (например, API_BASE), поэтому база задаётся локально.
-    const apiBase = "https://botsync.ru/api";
+    const apiBase = import.meta.env.PUBLIC_API_BASE
     let chats: Bot[] = [];
     try {
         const res = await fetch(`${apiBase}/chats`, {
