@@ -20,5 +20,19 @@ export default defineConfig({
         optimizeDeps: {
             include: ['react', 'react-dom', 'react/jsx-runtime', 'react-markdown'],
         },
+        server: {
+            proxy: {
+                '/api': {
+                    target: 'https://api.botsync.ru',
+                    changeOrigin: true,
+                    secure: false,
+                },
+                '/share-chat': {
+                    target: 'https://api.botsync.ru',
+                    changeOrigin: true,
+                    secure: false,
+                },
+            },
+        },
     },
 });
